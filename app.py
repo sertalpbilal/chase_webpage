@@ -13,7 +13,10 @@ app.config['DEBUG']=False
 @app.route('/')
 def main_page():
 
-    pd.set_option('precision', 2)
+    try:
+        pd.set_option('precision', 2)
+    except:
+        pd.set_option('display.precision', 2)
 
     rolling_avg_data = read_rolling_avg()
 
