@@ -47,7 +47,7 @@ def main_page():
     npxGD_roll = xgd_data.style\
         .background_gradient(cmap='RdBu')\
         .set_table_attributes("style='width:100%'")\
-        .set_caption('npxG conceded (rolling 12 games avg*) in EPL over the last calendar year')\
+        .set_caption('npxG difference (rolling 12 games avg*) in EPL over the last calendar year')\
         .render()
 
     content = {
