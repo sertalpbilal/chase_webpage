@@ -13,11 +13,6 @@ app.config['DEBUG']=False
 @app.route('/')
 def main_page():
 
-    try:
-        pd.set_option('precision', 2)
-    except:
-        pd.set_option('display.precision', 2)
-
     rolling_avg_data = read_rolling_avg()
 
     xg_data = rolling_avg_data.pivot('team', 'month', 'npxG_roll_adj')
@@ -28,6 +23,7 @@ def main_page():
         .background_gradient(cmap='YlGn')\
         .set_table_attributes("style='width:100%'")\
         .set_caption('npxG (rolling 12 games avg*) in EPL over the last calendar year')\
+        .set_precision(2)\
         .render()
 
     xgc_data = rolling_avg_data.pivot('team', 'month', 'npxGC_roll_adj')
@@ -38,6 +34,7 @@ def main_page():
         .background_gradient(cmap='OrRd')\
         .set_table_attributes("style='width:100%'")\
         .set_caption('npxG conceded (rolling 12 games avg*) in EPL over the last calendar year')\
+        .set_precision(2)\
         .render()
 
     xgd_data = rolling_avg_data.pivot('team', 'month', 'npxGD_roll_adj')
@@ -48,6 +45,7 @@ def main_page():
         .background_gradient(cmap='RdBu')\
         .set_table_attributes("style='width:100%'")\
         .set_caption('npxG difference (rolling 12 games avg*) in EPL over the last calendar year')\
+        .set_precision(2)\
         .render()
 
     content = {
