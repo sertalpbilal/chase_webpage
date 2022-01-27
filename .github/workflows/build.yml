@@ -1,0 +1,42 @@
+name: Populate-Webpage
+
+on:
+  workflow_dispatch:
+  push:
+    branches: main
+
+jobs:
+  build-and-run:
+    name: Run the automated Docker build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check current directory
+        run: pwd
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Checkout webpage branch
+        uses: actions/checkout@v2
+        with:
+          ref: 'webpage'
+          path: ./build
+      - name: setup python
+        uses: actions/setup-python@v2
+      - name: Install requirements
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+      - name: Freeze pages
+        run: python freeze.py
+      - name: Add changes to the branch
+        run: |
+          cd build
+          ls -la
+          git status
+          git checkout webpage
+          git add -u
+          git add .
+          git config user.name "Github Action"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Automated build $GITHUB_RUN_ID"
+          git push

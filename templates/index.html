@@ -1,0 +1,55 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>FPL_Chase Visualizations</title>
+    <meta name="description" content="Football visualizations from FPL_Chase">
+    <meta name="author" content="RH">
+
+    <meta property="og:title" content="FPL_Chase Visualizations">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:description" content="Football visualizations from FPL_Chase">
+
+    <link rel="icon" href=".{{ url_for('static', filename='favicon.ico')}}">
+    <link rel="icon" href=".{{ url_for('static', filename='favicon.png')}}">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.css" integrity="sha512-J0oLapSOxlpuL54IrxtPLHVqUjvo1/p/QzK6VqQWU0qNHkWq9UCSrwTrpeNiLphyMv47rsw1cVawMSiWiMtcBA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href=".{{ url_for('static', filename='css/styles.css') }}?v=1.0">
+
+</head>
+
+<body>
+
+    <div class="p-3 mb-3 bg-white border-bottom box-shadow">
+        <div class="container">
+            <h5 class="my-0 font-weight-normal"><a href="https://twitter.com/FPL_Chase">FPL_Chase</a> Visualizations</h5>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+
+        <div id="rolling_xg">
+            <h6 class="mb-3">Rolling npxG, npxGC, npxGΔ</h6>
+            <div id="plot1_npxG" class="mb-3">
+                {{ viz1.npxG_roll | safe }}
+            </div>
+            <div id="plot2_npxGC" class="mb-3">
+                {{ viz1.npxGC_roll | safe }}
+            </div>
+            <div id="plot3_npxGΔ" class="mb-3">
+                {{ viz1.npxGD_roll | safe }}
+            </div>
+        </div>
+    </div>
+    
+
+</body>
+
+</html>
