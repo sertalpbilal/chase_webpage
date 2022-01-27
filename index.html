@@ -1,0 +1,2123 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>FPL_Chase Visualizations</title>
+    <meta name="description" content="Football visualizations from FPL_Chase">
+    <meta name="author" content="RH">
+
+    <meta property="og:title" content="FPL_Chase Visualizations">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:description" content="Football visualizations from FPL_Chase">
+
+    <link rel="icon" href="./static/favicon.ico">
+    <link rel="icon" href="./static/favicon.png">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.css" integrity="sha512-J0oLapSOxlpuL54IrxtPLHVqUjvo1/p/QzK6VqQWU0qNHkWq9UCSrwTrpeNiLphyMv47rsw1cVawMSiWiMtcBA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./static/css/styles.css?v=1.0">
+
+</head>
+
+<body>
+
+    <div class="p-3 mb-3 bg-white border-bottom box-shadow">
+        <div class="container">
+            <h5 class="my-0 font-weight-normal"><a href="https://twitter.com/FPL_Chase">FPL_Chase</a> Visualizations</h5>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+
+        <div id="rolling_xg">
+            <h6 class="mb-3">Rolling npxG, npxGC, npxGΔ</h6>
+            <div id="plot1_npxG" class="mb-3">
+                <style type="text/css">
+#T_45b23_row0_col0, #T_45b23_row2_col3 {
+  background-color: #359c53;
+  color: #f1f1f1;
+}
+#T_45b23_row0_col1 {
+  background-color: #1e8041;
+  color: #f1f1f1;
+}
+#T_45b23_row0_col2 {
+  background-color: #1f8142;
+  color: #f1f1f1;
+}
+#T_45b23_row0_col3 {
+  background-color: #004a2b;
+  color: #f1f1f1;
+}
+#T_45b23_row0_col4, #T_45b23_row0_col5, #T_45b23_row0_col6, #T_45b23_row0_col7, #T_45b23_row0_col8, #T_45b23_row0_col9, #T_45b23_row1_col0, #T_45b23_row1_col1, #T_45b23_row1_col2, #T_45b23_row1_col3 {
+  background-color: #004529;
+  color: #f1f1f1;
+}
+#T_45b23_row1_col4 {
+  background-color: #005530;
+  color: #f1f1f1;
+}
+#T_45b23_row1_col5 {
+  background-color: #0e743c;
+  color: #f1f1f1;
+}
+#T_45b23_row1_col6 {
+  background-color: #268846;
+  color: #f1f1f1;
+}
+#T_45b23_row1_col7 {
+  background-color: #177b3f;
+  color: #f1f1f1;
+}
+#T_45b23_row1_col8 {
+  background-color: #086e3a;
+  color: #f1f1f1;
+}
+#T_45b23_row1_col9 {
+  background-color: #10743c;
+  color: #f1f1f1;
+}
+#T_45b23_row2_col0, #T_45b23_row8_col9 {
+  background-color: #bce395;
+  color: #000000;
+}
+#T_45b23_row2_col1, #T_45b23_row8_col0 {
+  background-color: #69bf72;
+  color: #000000;
+}
+#T_45b23_row2_col2, #T_45b23_row5_col2, #T_45b23_row8_col2, #T_45b23_row9_col1 {
+  background-color: #56b568;
+  color: #f1f1f1;
+}
+#T_45b23_row2_col4, #T_45b23_row6_col3 {
+  background-color: #70c275;
+  color: #000000;
+}
+#T_45b23_row2_col5 {
+  background-color: #e0f3a8;
+  color: #000000;
+}
+#T_45b23_row2_col6, #T_45b23_row9_col4, #T_45b23_row10_col9, #T_45b23_row11_col9, #T_45b23_row13_col7 {
+  background-color: #def2a7;
+  color: #000000;
+}
+#T_45b23_row2_col7, #T_45b23_row11_col4 {
+  background-color: #f8fcbd;
+  color: #000000;
+}
+#T_45b23_row2_col8 {
+  background-color: #b3e091;
+  color: #000000;
+}
+#T_45b23_row2_col9, #T_45b23_row3_col1 {
+  background-color: #3ba358;
+  color: #f1f1f1;
+}
+#T_45b23_row3_col0 {
+  background-color: #7ac77a;
+  color: #000000;
+}
+#T_45b23_row3_col2 {
+  background-color: #379e54;
+  color: #f1f1f1;
+}
+#T_45b23_row3_col3, #T_45b23_row4_col5 {
+  background-color: #339951;
+  color: #f1f1f1;
+}
+#T_45b23_row3_col4 {
+  background-color: #a6da8b;
+  color: #000000;
+}
+#T_45b23_row3_col5, #T_45b23_row13_col9, #T_45b23_row15_col0 {
+  background-color: #e4f4ab;
+  color: #000000;
+}
+#T_45b23_row3_col6 {
+  background-color: #b5e092;
+  color: #000000;
+}
+#T_45b23_row3_col7 {
+  background-color: #a7db8c;
+  color: #000000;
+}
+#T_45b23_row3_col8, #T_45b23_row9_col0 {
+  background-color: #6fc174;
+  color: #000000;
+}
+#T_45b23_row3_col9 {
+  background-color: #5fba6c;
+  color: #f1f1f1;
+}
+#T_45b23_row4_col0, #T_45b23_row10_col1, #T_45b23_row10_col4 {
+  background-color: #7ec97b;
+  color: #000000;
+}
+#T_45b23_row4_col1, #T_45b23_row16_col2 {
+  background-color: #8ed082;
+  color: #000000;
+}
+#T_45b23_row4_col2 {
+  background-color: #61bb6d;
+  color: #f1f1f1;
+}
+#T_45b23_row4_col3 {
+  background-color: #096f3a;
+  color: #f1f1f1;
+}
+#T_45b23_row4_col4 {
+  background-color: #005d33;
+  color: #f1f1f1;
+}
+#T_45b23_row4_col6, #T_45b23_row6_col0, #T_45b23_row8_col1, #T_45b23_row10_col3, #T_45b23_row11_col0 {
+  background-color: #3fa95c;
+  color: #f1f1f1;
+}
+#T_45b23_row4_col7 {
+  background-color: #5ab76a;
+  color: #f1f1f1;
+}
+#T_45b23_row4_col8 {
+  background-color: #72c376;
+  color: #000000;
+}
+#T_45b23_row4_col9 {
+  background-color: #7cc87b;
+  color: #000000;
+}
+#T_45b23_row5_col0 {
+  background-color: #53b466;
+  color: #f1f1f1;
+}
+#T_45b23_row5_col1 {
+  background-color: #389f55;
+  color: #f1f1f1;
+}
+#T_45b23_row5_col3 {
+  background-color: #4fb264;
+  color: #f1f1f1;
+}
+#T_45b23_row5_col4, #T_45b23_row6_col9, #T_45b23_row11_col1 {
+  background-color: #9fd788;
+  color: #000000;
+}
+#T_45b23_row5_col5 {
+  background-color: #c3e698;
+  color: #000000;
+}
+#T_45b23_row5_col6 {
+  background-color: #d3eda0;
+  color: #000000;
+}
+#T_45b23_row5_col7 {
+  background-color: #ddf2a6;
+  color: #000000;
+}
+#T_45b23_row5_col8 {
+  background-color: #bae394;
+  color: #000000;
+}
+#T_45b23_row5_col9 {
+  background-color: #88cd7f;
+  color: #000000;
+}
+#T_45b23_row6_col1 {
+  background-color: #86cc7f;
+  color: #000000;
+}
+#T_45b23_row6_col2 {
+  background-color: #4cb063;
+  color: #f1f1f1;
+}
+#T_45b23_row6_col4, #T_45b23_row12_col2 {
+  background-color: #83cb7d;
+  color: #000000;
+}
+#T_45b23_row6_col5, #T_45b23_row16_col1 {
+  background-color: #dbf1a4;
+  color: #000000;
+}
+#T_45b23_row6_col6 {
+  background-color: #dff3a8;
+  color: #000000;
+}
+#T_45b23_row6_col7 {
+  background-color: #d0ec9f;
+  color: #000000;
+}
+#T_45b23_row6_col8, #T_45b23_row13_col3 {
+  background-color: #bee596;
+  color: #000000;
+}
+#T_45b23_row7_col0, #T_45b23_row7_col1, #T_45b23_row7_col2, #T_45b23_row7_col3, #T_45b23_row7_col4, #T_45b23_row7_col5, #T_45b23_row9_col5, #T_45b23_row9_col6, #T_45b23_row9_col7, #T_45b23_row16_col8, #T_45b23_row16_col9 {
+  background-color: #ffffe5;
+  color: #000000;
+}
+#T_45b23_row7_col6, #T_45b23_row11_col7 {
+  background-color: #fcfed6;
+  color: #000000;
+}
+#T_45b23_row7_col7 {
+  background-color: #e2f4aa;
+  color: #000000;
+}
+#T_45b23_row7_col8 {
+  background-color: #cfec9e;
+  color: #000000;
+}
+#T_45b23_row7_col9 {
+  background-color: #abdc8d;
+  color: #000000;
+}
+#T_45b23_row8_col3 {
+  background-color: #77c679;
+  color: #000000;
+}
+#T_45b23_row8_col4, #T_45b23_row10_col0 {
+  background-color: #84cb7e;
+  color: #000000;
+}
+#T_45b23_row8_col5 {
+  background-color: #d6efa2;
+  color: #000000;
+}
+#T_45b23_row8_col6 {
+  background-color: #b6e192;
+  color: #000000;
+}
+#T_45b23_row8_col7, #T_45b23_row8_col8 {
+  background-color: #c0e597;
+  color: #000000;
+}
+#T_45b23_row9_col2 {
+  background-color: #66bd70;
+  color: #f1f1f1;
+}
+#T_45b23_row9_col3 {
+  background-color: #92d183;
+  color: #000000;
+}
+#T_45b23_row9_col8 {
+  background-color: #f5fbb8;
+  color: #000000;
+}
+#T_45b23_row9_col9 {
+  background-color: #d7efa2;
+  color: #000000;
+}
+#T_45b23_row10_col2 {
+  background-color: #4eb163;
+  color: #f1f1f1;
+}
+#T_45b23_row10_col5, #T_45b23_row14_col4 {
+  background-color: #c7e89a;
+  color: #000000;
+}
+#T_45b23_row10_col6, #T_45b23_row13_col6 {
+  background-color: #ddf1a6;
+  color: #000000;
+}
+#T_45b23_row10_col7, #T_45b23_row12_col5, #T_45b23_row14_col8 {
+  background-color: #edf8b1;
+  color: #000000;
+}
+#T_45b23_row10_col8 {
+  background-color: #eaf7af;
+  color: #000000;
+}
+#T_45b23_row11_col2 {
+  background-color: #c8e99b;
+  color: #000000;
+}
+#T_45b23_row11_col3 {
+  background-color: #ceeb9e;
+  color: #000000;
+}
+#T_45b23_row11_col5 {
+  background-color: #ffffe4;
+  color: #000000;
+}
+#T_45b23_row11_col6 {
+  background-color: #fafdcb;
+  color: #000000;
+}
+#T_45b23_row11_col8 {
+  background-color: #e8f6ae;
+  color: #000000;
+}
+#T_45b23_row12_col0, #T_45b23_row12_col7 {
+  background-color: #e7f6ad;
+  color: #000000;
+}
+#T_45b23_row12_col1, #T_45b23_row13_col4, #T_45b23_row15_col3 {
+  background-color: #c9e99c;
+  color: #000000;
+}
+#T_45b23_row12_col3 {
+  background-color: #8dcf81;
+  color: #000000;
+}
+#T_45b23_row12_col4 {
+  background-color: #9cd687;
+  color: #000000;
+}
+#T_45b23_row12_col6, #T_45b23_row15_col7 {
+  background-color: #eff9b3;
+  color: #000000;
+}
+#T_45b23_row12_col8 {
+  background-color: #e9f6af;
+  color: #000000;
+}
+#T_45b23_row12_col9 {
+  background-color: #e1f3a9;
+  color: #000000;
+}
+#T_45b23_row13_col0 {
+  background-color: #dcf1a5;
+  color: #000000;
+}
+#T_45b23_row13_col1 {
+  background-color: #c1e698;
+  color: #000000;
+}
+#T_45b23_row13_col2 {
+  background-color: #aedd8e;
+  color: #000000;
+}
+#T_45b23_row13_col5 {
+  background-color: #eef9b3;
+  color: #000000;
+}
+#T_45b23_row13_col8 {
+  background-color: #daf0a4;
+  color: #000000;
+}
+#T_45b23_row14_col0 {
+  background-color: #e6f5ac;
+  color: #000000;
+}
+#T_45b23_row14_col1 {
+  background-color: #bde496;
+  color: #000000;
+}
+#T_45b23_row14_col2 {
+  background-color: #89ce80;
+  color: #000000;
+}
+#T_45b23_row14_col3 {
+  background-color: #8bce81;
+  color: #000000;
+}
+#T_45b23_row14_col5 {
+  background-color: #f6fcb8;
+  color: #000000;
+}
+#T_45b23_row14_col6 {
+  background-color: #fafdc8;
+  color: #000000;
+}
+#T_45b23_row14_col7, #T_45b23_row15_col4 {
+  background-color: #ebf7b0;
+  color: #000000;
+}
+#T_45b23_row14_col9 {
+  background-color: #f7fcb9;
+  color: #000000;
+}
+#T_45b23_row15_col1 {
+  background-color: #b8e293;
+  color: #000000;
+}
+#T_45b23_row15_col2, #T_45b23_row16_col4 {
+  background-color: #a4d98a;
+  color: #000000;
+}
+#T_45b23_row15_col5 {
+  background-color: #feffe1;
+  color: #000000;
+}
+#T_45b23_row15_col6 {
+  background-color: #f8fcbe;
+  color: #000000;
+}
+#T_45b23_row15_col8, #T_45b23_row16_col6 {
+  background-color: #fafdc9;
+  color: #000000;
+}
+#T_45b23_row15_col9 {
+  background-color: #fcfed7;
+  color: #000000;
+}
+#T_45b23_row16_col0 {
+  background-color: #f9fdc2;
+  color: #000000;
+}
+#T_45b23_row16_col3 {
+  background-color: #98d486;
+  color: #000000;
+}
+#T_45b23_row16_col5 {
+  background-color: #f4fbb7;
+  color: #000000;
+}
+#T_45b23_row16_col7 {
+  background-color: #fdfedb;
+  color: #000000;
+}
+</style>
+<table id="T_45b23" style='width:100%'>
+  <caption>npxG (rolling 12 games avg*) in EPL over the last calendar year</caption>
+  <thead>
+    <tr>
+      <th class="index_name level0" >month</th>
+      <th id="T_45b23_level0_col0" class="col_heading level0 col0" >2021-02</th>
+      <th id="T_45b23_level0_col1" class="col_heading level0 col1" >2021-03</th>
+      <th id="T_45b23_level0_col2" class="col_heading level0 col2" >2021-04</th>
+      <th id="T_45b23_level0_col3" class="col_heading level0 col3" >2021-05</th>
+      <th id="T_45b23_level0_col4" class="col_heading level0 col4" >2021-08</th>
+      <th id="T_45b23_level0_col5" class="col_heading level0 col5" >2021-09</th>
+      <th id="T_45b23_level0_col6" class="col_heading level0 col6" >2021-10</th>
+      <th id="T_45b23_level0_col7" class="col_heading level0 col7" >2021-11</th>
+      <th id="T_45b23_level0_col8" class="col_heading level0 col8" >2021-12</th>
+      <th id="T_45b23_level0_col9" class="col_heading level0 col9" >2022-01</th>
+    </tr>
+    <tr>
+      <th class="index_name level0" >team</th>
+      <th class="blank col0" >&nbsp;</th>
+      <th class="blank col1" >&nbsp;</th>
+      <th class="blank col2" >&nbsp;</th>
+      <th class="blank col3" >&nbsp;</th>
+      <th class="blank col4" >&nbsp;</th>
+      <th class="blank col5" >&nbsp;</th>
+      <th class="blank col6" >&nbsp;</th>
+      <th class="blank col7" >&nbsp;</th>
+      <th class="blank col8" >&nbsp;</th>
+      <th class="blank col9" >&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_45b23_level0_row0" class="row_heading level0 row0" >Liverpool</th>
+      <td id="T_45b23_row0_col0" class="data row0 col0" >1.497384</td>
+      <td id="T_45b23_row0_col1" class="data row0 col1" >1.563197</td>
+      <td id="T_45b23_row0_col2" class="data row0 col2" >1.611050</td>
+      <td id="T_45b23_row0_col3" class="data row0 col3" >1.819629</td>
+      <td id="T_45b23_row0_col4" class="data row0 col4" >1.919158</td>
+      <td id="T_45b23_row0_col5" class="data row0 col5" >2.181983</td>
+      <td id="T_45b23_row0_col6" class="data row0 col6" >2.327606</td>
+      <td id="T_45b23_row0_col7" class="data row0 col7" >2.421912</td>
+      <td id="T_45b23_row0_col8" class="data row0 col8" >2.305162</td>
+      <td id="T_45b23_row0_col9" class="data row0 col9" >2.077091</td>
+    </tr>
+    <tr>
+      <th id="T_45b23_level0_row1" class="row_heading level0 row1" >Manchester City</th>
+      <td id="T_45b23_row1_col0" class="data row1 col0" >1.918272</td>
+      <td id="T_45b23_row1_col1" class="data row1 col1" >1.883609</td>
+      <td id="T_45b23_row1_col2" class="data row1 col2" >1.956085</td>
+      <td id="T_45b23_row1_col3" class="data row1 col3" >1.845077</td>
+      <td id="T_45b23_row1_col4" class="data row1 col4" >1.853043</td>
+      <td id="T_45b23_row1_col5" class="data row1 col5" >1.968966</td>
+      <td id="T_45b23_row1_col6" class="data row1 col6" >1.936343</td>
+      <td id="T_45b23_row1_col7" class="data row1 col7" >2.075935</td>
+      <td id="T_45b23_row1_col8" class="data row1 col8" >2.059139</td>
+      <td id="T_45b23_row1_col9" class="data row1 col9" >1.823089</td>
+    </tr>
+    <tr>
+      <th id="T_45b23_level0_row2" class="row_heading level0 row2" >Tottenham</th>
+      <td id="T_45b23_row2_col0" class="data row2 col0" >1.058144</td>
+      <td id="T_45b23_row2_col1" class="data row2 col1" >1.246164</td>
+      <td id="T_45b23_row2_col2" class="data row2 col2" >1.339750</td>
+      <td id="T_45b23_row2_col3" class="data row2 col3" >1.477310</td>
+      <td id="T_45b23_row2_col4" class="data row2 col4" >1.399843</td>
+      <td id="T_45b23_row2_col5" class="data row2 col5" >1.239555</td>
+      <td id="T_45b23_row2_col6" class="data row2 col6" >1.188259</td>
+      <td id="T_45b23_row2_col7" class="data row2 col7" >0.962684</td>
+      <td id="T_45b23_row2_col8" class="data row2 col8" >1.266684</td>
+      <td id="T_45b23_row2_col9" class="data row2 col9" >1.588040</td>
+    </tr>
+    <tr>
+      <th id="T_45b23_level0_row3" class="row_heading level0 row3" >Leicester City</th>
+      <td id="T_45b23_row3_col0" class="data row3 col0" >1.266659</td>
+      <td id="T_45b23_row3_col1" class="data row3 col1" >1.405080</td>
+      <td id="T_45b23_row3_col2" class="data row3 col2" >1.468131</td>
+      <td id="T_45b23_row3_col3" class="data row3 col3" >1.484899</td>
+      <td id="T_45b23_row3_col4" class="data row3 col4" >1.266818</td>
+      <td id="T_45b23_row3_col5" class="data row3 col5" >1.222146</td>
+      <td id="T_45b23_row3_col6" class="data row3 col6" >1.372784</td>
+      <td id="T_45b23_row3_col7" class="data row3 col7" >1.412332</td>
+      <td id="T_45b23_row3_col8" class="data row3 col8" >1.532012</td>
+      <td id="T_45b23_row3_col9" class="data row3 col9" >1.458104</td>
+    </tr>
+    <tr>
+      <th id="T_45b23_level0_row4" class="row_heading level0 row4" >Chelsea</th>
+      <td id="T_45b23_row4_col0" class="data row4 col0" >1.255011</td>
+      <td id="T_45b23_row4_col1" class="data row4 col1" >1.124669</td>
+      <td id="T_45b23_row4_col2" class="data row4 col2" >1.307559</td>
+      <td id="T_45b23_row4_col3" class="data row4 col3" >1.666968</td>
+      <td id="T_45b23_row4_col4" class="data row4 col4" >1.822759</td>
+      <td id="T_45b23_row4_col5" class="data row4 col5" >1.797996</td>
+      <td id="T_45b23_row4_col6" class="data row4 col6" >1.782712</td>
+      <td id="T_45b23_row4_col7" class="data row4 col7" >1.713306</td>
+      <td id="T_45b23_row4_col8" class="data row4 col8" >1.521843</td>
+      <td id="T_45b23_row4_col9" class="data row4 col9" >1.366855</td>
+    </tr>
+    <tr>
+      <th id="T_45b23_level0_row5" class="row_heading level0 row5" >Arsenal</th>
+      <td id="T_45b23_row5_col0" class="data row5 col0" >1.380500</td>
+      <td id="T_45b23_row5_col1" class="data row5 col1" >1.418259</td>
+      <td id="T_45b23_row5_col2" class="data row5 col2" >1.341063</td>
+      <td id="T_45b23_row5_col3" class="data row5 col3" >1.385993</td>
+      <td id="T_45b23_row5_col4" class="data row5 col4" >1.280565</td>
+      <td id="T_45b23_row5_col5" class="data row5 col5" >1.352270</td>
+      <td id="T_45b23_row5_col6" class="data row5 col6" >1.246471</td>
+      <td id="T_45b23_row5_col7" class="data row5 col7" >1.154087</td>
+      <td id="T_45b23_row5_col8" class="data row5 col8" >1.235683</td>
+      <td id="T_45b23_row5_col9" class="data row5 col9" >1.330593</td>
+    </tr>
+    <tr>
+      <th id="T_45b23_level0_row6" class="row_heading level0 row6" >Manchester Utd</th>
+      <td id="T_45b23_row6_col0" class="data row6 col0" >1.440332</td>
+      <td id="T_45b23_row6_col1" class="data row6 col1" >1.154459</td>
+      <td id="T_45b23_row6_col2" class="data row6 col2" >1.371138</td>
+      <td id="T_45b23_row6_col3" class="data row6 col3" >1.302992</td>
+      <td id="T_45b23_row6_col4" class="data row6 col4" >1.353772</td>
+      <td id="T_45b23_row6_col5" class="data row6 col5" >1.269491</td>
+      <td id="T_45b23_row6_col6" class="data row6 col6" >1.186772</td>
+      <td id="T_45b23_row6_col7" class="data row6 col7" >1.228648</td>
+      <td id="T_45b23_row6_col8" class="data row6 col8" >1.218777</td>
+      <td id="T_45b23_row6_col9" class="data row6 col9" >1.255879</td>
+    </tr>
+    <tr>
+      <th id="T_45b23_level0_row7" class="row_heading level0 row7" >Crystal Palace</th>
+      <td id="T_45b23_row7_col0" class="data row7 col0" >0.628026</td>
+      <td id="T_45b23_row7_col1" class="data row7 col1" >0.512766</td>
+      <td id="T_45b23_row7_col2" class="data row7 col2" >0.500433</td>
+      <td id="T_45b23_row7_col3" class="data row7 col3" >0.719938</td>
+      <td id="T_45b23_row7_col4" class="data row7 col4" >0.843265</td>
+      <td id="T_45b23_row7_col5" class="data row7 col5" >0.973060</td>
+      <td id="T_45b23_row7_col6" class="data row7 col6" >0.921002</td>
+      <td id="T_45b23_row7_col7" class="data row7 col7" >1.124520</td>
+      <td id="T_45b23_row7_col8" class="data row7 col8" >1.144672</td>
+      <td id="T_45b23_row7_col9" class="data row7 col9" >1.213110</td>
+    </tr>
+    <tr>
+      <th id="T_45b23_level0_row8" class="row_heading level0 row8" >West Ham</th>
+      <td id="T_45b23_row8_col0" class="data row8 col0" >1.314870</td>
+      <td id="T_45b23_row8_col1" class="data row8 col1" >1.378304</td>
+      <td id="T_45b23_row8_col2" class="data row8 col2" >1.337315</td>
+      <td id="T_45b23_row8_col3" class="data row8 col3" >1.283308</td>
+      <td id="T_45b23_row8_col4" class="data row8 col4" >1.350133</td>
+      <td id="T_45b23_row8_col5" class="data row8 col5" >1.284947</td>
+      <td id="T_45b23_row8_col6" class="data row8 col6" >1.366243</td>
+      <td id="T_45b23_row8_col7" class="data row8 col7" >1.302127</td>
+      <td id="T_45b23_row8_col8" class="data row8 col8" >1.211572</td>
+      <td id="T_45b23_row8_col9" class="data row8 col9" >1.149697</td>
+    </tr>
+    <tr>
+      <th id="T_45b23_level0_row9" class="row_heading level0 row9" >Brighton</th>
+      <td id="T_45b23_row9_col0" class="data row9 col0" >1.302372</td>
+      <td id="T_45b23_row9_col1" class="data row9 col1" >1.304041</td>
+      <td id="T_45b23_row9_col2" class="data row9 col2" >1.285808</td>
+      <td id="T_45b23_row9_col3" class="data row9 col3" >1.213255</td>
+      <td id="T_45b23_row9_col4" class="data row9 col4" >1.089969</td>
+      <td id="T_45b23_row9_col5" class="data row9 col5" >0.973476</td>
+      <td id="T_45b23_row9_col6" class="data row9 col6" >0.853107</td>
+      <td id="T_45b23_row9_col7" class="data row9 col7" >0.774293</td>
+      <td id="T_45b23_row9_col8" class="data row9 col8" >0.907985</td>
+      <td id="T_45b23_row9_col9" class="data row9 col9" >1.038930</td>
+    </tr>
+    <tr>
+      <th id="T_45b23_level0_row10" class="row_heading level0 row10" >Leeds United</th>
+      <td id="T_45b23_row10_col0" class="data row10 col0" >1.233472</td>
+      <td id="T_45b23_row10_col1" class="data row10 col1" >1.180456</td>
+      <td id="T_45b23_row10_col2" class="data row10 col2" >1.367103</td>
+      <td id="T_45b23_row10_col3" class="data row10 col3" >1.428462</td>
+      <td id="T_45b23_row10_col4" class="data row10 col4" >1.365861</td>
+      <td id="T_45b23_row10_col5" class="data row10 col5" >1.339697</td>
+      <td id="T_45b23_row10_col6" class="data row10 col6" >1.203273</td>
+      <td id="T_45b23_row10_col7" class="data row10 col7" >1.057279</td>
+      <td id="T_45b23_row10_col8" class="data row10 col8" >0.987003</td>
+      <td id="T_45b23_row10_col9" class="data row10 col9" >1.004741</td>
+    </tr>
+    <tr>
+      <th id="T_45b23_level0_row11" class="row_heading level0 row11" >Aston Villa</th>
+      <td id="T_45b23_row11_col0" class="data row11 col0" >1.443080</td>
+      <td id="T_45b23_row11_col1" class="data row11 col1" >1.074271</td>
+      <td id="T_45b23_row11_col2" class="data row11 col2" >0.938076</td>
+      <td id="T_45b23_row11_col3" class="data row11 col3" >1.040056</td>
+      <td id="T_45b23_row11_col4" class="data row11 col4" >0.966348</td>
+      <td id="T_45b23_row11_col5" class="data row11 col5" >0.981972</td>
+      <td id="T_45b23_row11_col6" class="data row11 col6" >0.964633</td>
+      <td id="T_45b23_row11_col7" class="data row11 col7" >0.848944</td>
+      <td id="T_45b23_row11_col8" class="data row11 col8" >0.997774</td>
+      <td id="T_45b23_row11_col9" class="data row11 col9" >1.003414</td>
+    </tr>
+    <tr>
+      <th id="T_45b23_level0_row12" class="row_heading level0 row12" >Everton</th>
+      <td id="T_45b23_row12_col0" class="data row12 col0" >0.878586</td>
+      <td id="T_45b23_row12_col1" class="data row12 col1" >0.918715</td>
+      <td id="T_45b23_row12_col2" class="data row12 col2" >1.193852</td>
+      <td id="T_45b23_row12_col3" class="data row12 col3" >1.226654</td>
+      <td id="T_45b23_row12_col4" class="data row12 col4" >1.291413</td>
+      <td id="T_45b23_row12_col5" class="data row12 col5" >1.178044</td>
+      <td id="T_45b23_row12_col6" class="data row12 col6" >1.089225</td>
+      <td id="T_45b23_row12_col7" class="data row12 col7" >1.095860</td>
+      <td id="T_45b23_row12_col8" class="data row12 col8" >0.989085</td>
+      <td id="T_45b23_row12_col9" class="data row12 col9" >0.986296</td>
+    </tr>
+    <tr>
+      <th id="T_45b23_level0_row13" class="row_heading level0 row13" >Southampton</th>
+      <td id="T_45b23_row13_col0" class="data row13 col0" >0.935750</td>
+      <td id="T_45b23_row13_col1" class="data row13 col1" >0.947372</td>
+      <td id="T_45b23_row13_col2" class="data row13 col2" >1.043949</td>
+      <td id="T_45b23_row13_col3" class="data row13 col3" >1.087191</td>
+      <td id="T_45b23_row13_col4" class="data row13 col4" >1.160305</td>
+      <td id="T_45b23_row13_col5" class="data row13 col5" >1.169556</td>
+      <td id="T_45b23_row13_col6" class="data row13 col6" >1.204334</td>
+      <td id="T_45b23_row13_col7" class="data row13 col7" >1.150359</td>
+      <td id="T_45b23_row13_col8" class="data row13 col8" >1.094499</td>
+      <td id="T_45b23_row13_col9" class="data row13 col9" >0.970432</td>
+    </tr>
+    <tr>
+      <th id="T_45b23_level0_row14" class="row_heading level0 row14" >Burnley</th>
+      <td id="T_45b23_row14_col0" class="data row14 col0" >0.882987</td>
+      <td id="T_45b23_row14_col1" class="data row14 col1" >0.965112</td>
+      <td id="T_45b23_row14_col2" class="data row14 col2" >1.169887</td>
+      <td id="T_45b23_row14_col3" class="data row14 col3" >1.233118</td>
+      <td id="T_45b23_row14_col4" class="data row14 col4" >1.170510</td>
+      <td id="T_45b23_row14_col5" class="data row14 col5" >1.132994</td>
+      <td id="T_45b23_row14_col6" class="data row14 col6" >0.974382</td>
+      <td id="T_45b23_row14_col7" class="data row14 col7" >1.065712</td>
+      <td id="T_45b23_row14_col8" class="data row14 col8" >0.967938</td>
+      <td id="T_45b23_row14_col9" class="data row14 col9" >0.861373</td>
+    </tr>
+    <tr>
+      <th id="T_45b23_level0_row15" class="row_heading level0 row15" >Wolves</th>
+      <td id="T_45b23_row15_col0" class="data row15 col0" >0.895053</td>
+      <td id="T_45b23_row15_col1" class="data row15 col1" >0.987695</td>
+      <td id="T_45b23_row15_col2" class="data row15 col2" >1.075142</td>
+      <td id="T_45b23_row15_col3" class="data row15 col3" >1.053747</td>
+      <td id="T_45b23_row15_col4" class="data row15 col4" >1.033403</td>
+      <td id="T_45b23_row15_col5" class="data row15 col5" >0.990431</td>
+      <td id="T_45b23_row15_col6" class="data row15 col6" >1.015671</td>
+      <td id="T_45b23_row15_col7" class="data row15 col7" >1.032484</td>
+      <td id="T_45b23_row15_col8" class="data row15 col8" >0.823003</td>
+      <td id="T_45b23_row15_col9" class="data row15 col9" >0.744253</td>
+    </tr>
+    <tr>
+      <th id="T_45b23_level0_row16" class="row_heading level0 row16" >Newcastle Utd</th>
+      <td id="T_45b23_row16_col0" class="data row16 col0" >0.756423</td>
+      <td id="T_45b23_row16_col1" class="data row16 col1" >0.846706</td>
+      <td id="T_45b23_row16_col2" class="data row16 col2" >1.149110</td>
+      <td id="T_45b23_row16_col3" class="data row16 col3" >1.196955</td>
+      <td id="T_45b23_row16_col4" class="data row16 col4" >1.270252</td>
+      <td id="T_45b23_row16_col5" class="data row16 col5" >1.139909</td>
+      <td id="T_45b23_row16_col6" class="data row16 col6" >0.971053</td>
+      <td id="T_45b23_row16_col7" class="data row16 col7" >0.823397</td>
+      <td id="T_45b23_row16_col8" class="data row16 col8" >0.691203</td>
+      <td id="T_45b23_row16_col9" class="data row16 col9" >0.685174</td>
+    </tr>
+  </tbody>
+</table>
+
+            </div>
+            <div id="plot2_npxGC" class="mb-3">
+                <style type="text/css">
+#T_02f65_row0_col0, #T_02f65_row0_col1, #T_02f65_row0_col5, #T_02f65_row0_col6, #T_02f65_row0_col7, #T_02f65_row0_col8, #T_02f65_row0_col9, #T_02f65_row1_col1, #T_02f65_row1_col2, #T_02f65_row1_col3, #T_02f65_row1_col4 {
+  background-color: #fff7ec;
+  color: #000000;
+}
+#T_02f65_row0_col2 {
+  background-color: #feefda;
+  color: #000000;
+}
+#T_02f65_row0_col3 {
+  background-color: #fee7c7;
+  color: #000000;
+}
+#T_02f65_row0_col4 {
+  background-color: #fff4e5;
+  color: #000000;
+}
+#T_02f65_row1_col0, #T_02f65_row4_col9 {
+  background-color: #fdcc96;
+  color: #000000;
+}
+#T_02f65_row1_col5 {
+  background-color: #feefd8;
+  color: #000000;
+}
+#T_02f65_row1_col6 {
+  background-color: #fee4c0;
+  color: #000000;
+}
+#T_02f65_row1_col7 {
+  background-color: #fdd7a4;
+  color: #000000;
+}
+#T_02f65_row1_col8 {
+  background-color: #fedfb4;
+  color: #000000;
+}
+#T_02f65_row1_col9 {
+  background-color: #fff5e7;
+  color: #000000;
+}
+#T_02f65_row2_col0 {
+  background-color: #f4734e;
+  color: #f1f1f1;
+}
+#T_02f65_row2_col1, #T_02f65_row9_col5 {
+  background-color: #fc8c59;
+  color: #f1f1f1;
+}
+#T_02f65_row2_col2, #T_02f65_row6_col7, #T_02f65_row9_col4 {
+  background-color: #fc935f;
+  color: #000000;
+}
+#T_02f65_row2_col3, #T_02f65_row16_col3 {
+  background-color: #e55038;
+  color: #f1f1f1;
+}
+#T_02f65_row2_col4, #T_02f65_row15_col7, #T_02f65_row16_col4 {
+  background-color: #ca1e14;
+  color: #f1f1f1;
+}
+#T_02f65_row2_col5 {
+  background-color: #df412c;
+  color: #f1f1f1;
+}
+#T_02f65_row2_col6 {
+  background-color: #f3724e;
+  color: #f1f1f1;
+}
+#T_02f65_row2_col7 {
+  background-color: #fc9964;
+  color: #000000;
+}
+#T_02f65_row2_col8 {
+  background-color: #fc9f6a;
+  color: #000000;
+}
+#T_02f65_row2_col9 {
+  background-color: #fee0b7;
+  color: #000000;
+}
+#T_02f65_row3_col0, #T_02f65_row4_col2, #T_02f65_row9_col7 {
+  background-color: #fda872;
+  color: #000000;
+}
+#T_02f65_row3_col1 {
+  background-color: #fda671;
+  color: #000000;
+}
+#T_02f65_row3_col2, #T_02f65_row8_col7 {
+  background-color: #fdab75;
+  color: #000000;
+}
+#T_02f65_row3_col3 {
+  background-color: #fb8957;
+  color: #f1f1f1;
+}
+#T_02f65_row3_col4, #T_02f65_row14_col5 {
+  background-color: #f06849;
+  color: #f1f1f1;
+}
+#T_02f65_row3_col5, #T_02f65_row12_col9, #T_02f65_row13_col9 {
+  background-color: #ce2417;
+  color: #f1f1f1;
+}
+#T_02f65_row3_col6, #T_02f65_row11_col6 {
+  background-color: #b90805;
+  color: #f1f1f1;
+}
+#T_02f65_row3_col7 {
+  background-color: #a50000;
+  color: #f1f1f1;
+}
+#T_02f65_row3_col8 {
+  background-color: #ec5d42;
+  color: #f1f1f1;
+}
+#T_02f65_row3_col9 {
+  background-color: #fdcd96;
+  color: #000000;
+}
+#T_02f65_row4_col0 {
+  background-color: #fdac76;
+  color: #000000;
+}
+#T_02f65_row4_col1, #T_02f65_row8_col0 {
+  background-color: #fca06b;
+  color: #000000;
+}
+#T_02f65_row4_col3 {
+  background-color: #f98455;
+  color: #f1f1f1;
+}
+#T_02f65_row4_col4, #T_02f65_row6_col8, #T_02f65_row15_col3 {
+  background-color: #f4764f;
+  color: #f1f1f1;
+}
+#T_02f65_row4_col5 {
+  background-color: #e8553c;
+  color: #f1f1f1;
+}
+#T_02f65_row4_col6 {
+  background-color: #fc925e;
+  color: #000000;
+}
+#T_02f65_row4_col7 {
+  background-color: #fca36e;
+  color: #000000;
+}
+#T_02f65_row4_col8, #T_02f65_row9_col2 {
+  background-color: #fdc892;
+  color: #000000;
+}
+#T_02f65_row5_col0 {
+  background-color: #e34b34;
+  color: #f1f1f1;
+}
+#T_02f65_row5_col1, #T_02f65_row13_col0, #T_02f65_row15_col5 {
+  background-color: #d52d1d;
+  color: #f1f1f1;
+}
+#T_02f65_row5_col2, #T_02f65_row5_col4, #T_02f65_row15_col4 {
+  background-color: #f16c4b;
+  color: #f1f1f1;
+}
+#T_02f65_row5_col3, #T_02f65_row5_col6 {
+  background-color: #e24831;
+  color: #f1f1f1;
+}
+#T_02f65_row5_col5, #T_02f65_row12_col0 {
+  background-color: #f67c52;
+  color: #f1f1f1;
+}
+#T_02f65_row5_col7 {
+  background-color: #d7301f;
+  color: #f1f1f1;
+}
+#T_02f65_row5_col8, #T_02f65_row10_col1, #T_02f65_row12_col6 {
+  background-color: #ec5f43;
+  color: #f1f1f1;
+}
+#T_02f65_row5_col9 {
+  background-color: #fdaf79;
+  color: #000000;
+}
+#T_02f65_row6_col0 {
+  background-color: #fda56f;
+  color: #000000;
+}
+#T_02f65_row6_col1 {
+  background-color: #fdce97;
+  color: #000000;
+}
+#T_02f65_row6_col2 {
+  background-color: #fdd8a7;
+  color: #000000;
+}
+#T_02f65_row6_col3 {
+  background-color: #fdd19b;
+  color: #000000;
+}
+#T_02f65_row6_col4 {
+  background-color: #fdd09a;
+  color: #000000;
+}
+#T_02f65_row6_col5 {
+  background-color: #fdc791;
+  color: #000000;
+}
+#T_02f65_row6_col6 {
+  background-color: #fdb881;
+  color: #000000;
+}
+#T_02f65_row6_col9 {
+  background-color: #fdad77;
+  color: #000000;
+}
+#T_02f65_row7_col0, #T_02f65_row13_col6 {
+  background-color: #9c0000;
+  color: #f1f1f1;
+}
+#T_02f65_row7_col1, #T_02f65_row7_col2, #T_02f65_row11_col3, #T_02f65_row11_col4, #T_02f65_row16_col0, #T_02f65_row16_col5, #T_02f65_row16_col6, #T_02f65_row16_col7, #T_02f65_row16_col8, #T_02f65_row16_col9 {
+  background-color: #7f0000;
+  color: #f1f1f1;
+}
+#T_02f65_row7_col3 {
+  background-color: #840000;
+  color: #f1f1f1;
+}
+#T_02f65_row7_col4 {
+  background-color: #e14630;
+  color: #f1f1f1;
+}
+#T_02f65_row7_col5, #T_02f65_row7_col8, #T_02f65_row7_col9 {
+  background-color: #fc9e69;
+  color: #000000;
+}
+#T_02f65_row7_col6 {
+  background-color: #fdbd86;
+  color: #000000;
+}
+#T_02f65_row7_col7 {
+  background-color: #fdc38c;
+  color: #000000;
+}
+#T_02f65_row8_col1 {
+  background-color: #fdc28b;
+  color: #000000;
+}
+#T_02f65_row8_col2 {
+  background-color: #f98556;
+  color: #f1f1f1;
+}
+#T_02f65_row8_col3 {
+  background-color: #d12719;
+  color: #f1f1f1;
+}
+#T_02f65_row8_col4 {
+  background-color: #ad0000;
+  color: #f1f1f1;
+}
+#T_02f65_row8_col5 {
+  background-color: #de3f2b;
+  color: #f1f1f1;
+}
+#T_02f65_row8_col6 {
+  background-color: #f4754f;
+  color: #f1f1f1;
+}
+#T_02f65_row8_col8 {
+  background-color: #fc9863;
+  color: #000000;
+}
+#T_02f65_row8_col9 {
+  background-color: #f67b51;
+  color: #f1f1f1;
+}
+#T_02f65_row9_col0 {
+  background-color: #fdbb85;
+  color: #000000;
+}
+#T_02f65_row9_col1 {
+  background-color: #fdc18a;
+  color: #000000;
+}
+#T_02f65_row9_col3 {
+  background-color: #f26d4b;
+  color: #f1f1f1;
+}
+#T_02f65_row9_col6 {
+  background-color: #fdb37d;
+  color: #000000;
+}
+#T_02f65_row9_col8 {
+  background-color: #d93422;
+  color: #f1f1f1;
+}
+#T_02f65_row9_col9, #T_02f65_row14_col2 {
+  background-color: #f06749;
+  color: #f1f1f1;
+}
+#T_02f65_row10_col0 {
+  background-color: #f77f53;
+  color: #f1f1f1;
+}
+#T_02f65_row10_col2 {
+  background-color: #f98254;
+  color: #f1f1f1;
+}
+#T_02f65_row10_col3 {
+  background-color: #d83221;
+  color: #f1f1f1;
+}
+#T_02f65_row10_col4, #T_02f65_row14_col7 {
+  background-color: #c1120c;
+  color: #f1f1f1;
+}
+#T_02f65_row10_col5 {
+  background-color: #e24933;
+  color: #f1f1f1;
+}
+#T_02f65_row10_col6, #T_02f65_row15_col6 {
+  background-color: #cf2618;
+  color: #f1f1f1;
+}
+#T_02f65_row10_col7, #T_02f65_row11_col0 {
+  background-color: #dc3c28;
+  color: #f1f1f1;
+}
+#T_02f65_row10_col8 {
+  background-color: #d62f1e;
+  color: #f1f1f1;
+}
+#T_02f65_row10_col9 {
+  background-color: #ed6145;
+  color: #f1f1f1;
+}
+#T_02f65_row11_col1 {
+  background-color: #b00000;
+  color: #f1f1f1;
+}
+#T_02f65_row11_col2, #T_02f65_row16_col1 {
+  background-color: #dd3e2a;
+  color: #f1f1f1;
+}
+#T_02f65_row11_col5 {
+  background-color: #930000;
+  color: #f1f1f1;
+}
+#T_02f65_row11_col7 {
+  background-color: #b30000;
+  color: #f1f1f1;
+}
+#T_02f65_row11_col8 {
+  background-color: #9e0000;
+  color: #f1f1f1;
+}
+#T_02f65_row11_col9 {
+  background-color: #d32a1b;
+  color: #f1f1f1;
+}
+#T_02f65_row12_col1 {
+  background-color: #fdb57e;
+  color: #000000;
+}
+#T_02f65_row12_col2 {
+  background-color: #fdd8a6;
+  color: #000000;
+}
+#T_02f65_row12_col3 {
+  background-color: #fdd9aa;
+  color: #000000;
+}
+#T_02f65_row12_col4 {
+  background-color: #fddbac;
+  color: #000000;
+}
+#T_02f65_row12_col5 {
+  background-color: #fdcb95;
+  color: #000000;
+}
+#T_02f65_row12_col7 {
+  background-color: #c3150e;
+  color: #f1f1f1;
+}
+#T_02f65_row12_col8 {
+  background-color: #8f0000;
+  color: #f1f1f1;
+}
+#T_02f65_row13_col1 {
+  background-color: #c61a11;
+  color: #f1f1f1;
+}
+#T_02f65_row13_col2, #T_02f65_row15_col2 {
+  background-color: #fa8757;
+  color: #f1f1f1;
+}
+#T_02f65_row13_col3, #T_02f65_row13_col4, #T_02f65_row14_col0, #T_02f65_row14_col6 {
+  background-color: #e65239;
+  color: #f1f1f1;
+}
+#T_02f65_row13_col5 {
+  background-color: #bb0b07;
+  color: #f1f1f1;
+}
+#T_02f65_row13_col7 {
+  background-color: #8a0000;
+  color: #f1f1f1;
+}
+#T_02f65_row13_col8 {
+  background-color: #ae0000;
+  color: #f1f1f1;
+}
+#T_02f65_row14_col1 {
+  background-color: #cc2116;
+  color: #f1f1f1;
+}
+#T_02f65_row14_col3 {
+  background-color: #e7533a;
+  color: #f1f1f1;
+}
+#T_02f65_row14_col4, #T_02f65_row15_col0 {
+  background-color: #f57850;
+  color: #f1f1f1;
+}
+#T_02f65_row14_col8 {
+  background-color: #c0110b;
+  color: #f1f1f1;
+}
+#T_02f65_row14_col9 {
+  background-color: #cb2015;
+  color: #f1f1f1;
+}
+#T_02f65_row15_col1 {
+  background-color: #f67a51;
+  color: #f1f1f1;
+}
+#T_02f65_row15_col8 {
+  background-color: #a80000;
+  color: #f1f1f1;
+}
+#T_02f65_row15_col9 {
+  background-color: #b20000;
+  color: #f1f1f1;
+}
+#T_02f65_row16_col2 {
+  background-color: #f88053;
+  color: #f1f1f1;
+}
+</style>
+<table id="T_02f65" style='width:100%'>
+  <caption>npxG conceded (rolling 12 games avg*) in EPL over the last calendar year</caption>
+  <thead>
+    <tr>
+      <th class="index_name level0" >month</th>
+      <th id="T_02f65_level0_col0" class="col_heading level0 col0" >2021-02</th>
+      <th id="T_02f65_level0_col1" class="col_heading level0 col1" >2021-03</th>
+      <th id="T_02f65_level0_col2" class="col_heading level0 col2" >2021-04</th>
+      <th id="T_02f65_level0_col3" class="col_heading level0 col3" >2021-05</th>
+      <th id="T_02f65_level0_col4" class="col_heading level0 col4" >2021-08</th>
+      <th id="T_02f65_level0_col5" class="col_heading level0 col5" >2021-09</th>
+      <th id="T_02f65_level0_col6" class="col_heading level0 col6" >2021-10</th>
+      <th id="T_02f65_level0_col7" class="col_heading level0 col7" >2021-11</th>
+      <th id="T_02f65_level0_col8" class="col_heading level0 col8" >2021-12</th>
+      <th id="T_02f65_level0_col9" class="col_heading level0 col9" >2022-01</th>
+    </tr>
+    <tr>
+      <th class="index_name level0" >team</th>
+      <th class="blank col0" >&nbsp;</th>
+      <th class="blank col1" >&nbsp;</th>
+      <th class="blank col2" >&nbsp;</th>
+      <th class="blank col3" >&nbsp;</th>
+      <th class="blank col4" >&nbsp;</th>
+      <th class="blank col5" >&nbsp;</th>
+      <th class="blank col6" >&nbsp;</th>
+      <th class="blank col7" >&nbsp;</th>
+      <th class="blank col8" >&nbsp;</th>
+      <th class="blank col9" >&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_02f65_level0_row0" class="row_heading level0 row0" >Manchester City</th>
+      <td id="T_02f65_row0_col0" class="data row0 col0" >0.433437</td>
+      <td id="T_02f65_row0_col1" class="data row0 col1" >0.604282</td>
+      <td id="T_02f65_row0_col2" class="data row0 col2" >0.636197</td>
+      <td id="T_02f65_row0_col3" class="data row0 col3" >0.721992</td>
+      <td id="T_02f65_row0_col4" class="data row0 col4" >0.671800</td>
+      <td id="T_02f65_row0_col5" class="data row0 col5" >0.636011</td>
+      <td id="T_02f65_row0_col6" class="data row0 col6" >0.636492</td>
+      <td id="T_02f65_row0_col7" class="data row0 col7" >0.564952</td>
+      <td id="T_02f65_row0_col8" class="data row0 col8" >0.603394</td>
+      <td id="T_02f65_row0_col9" class="data row0 col9" >0.635503</td>
+    </tr>
+    <tr>
+      <th id="T_02f65_level0_row1" class="row_heading level0 row1" >Chelsea</th>
+      <td id="T_02f65_row1_col0" class="data row1 col0" >0.774604</td>
+      <td id="T_02f65_row1_col1" class="data row1 col1" >0.607219</td>
+      <td id="T_02f65_row1_col2" class="data row1 col2" >0.550783</td>
+      <td id="T_02f65_row1_col3" class="data row1 col3" >0.583154</td>
+      <td id="T_02f65_row1_col4" class="data row1 col4" >0.647507</td>
+      <td id="T_02f65_row1_col5" class="data row1 col5" >0.707503</td>
+      <td id="T_02f65_row1_col6" class="data row1 col6" >0.780237</td>
+      <td id="T_02f65_row1_col7" class="data row1 col7" >0.800256</td>
+      <td id="T_02f65_row1_col8" class="data row1 col8" >0.766461</td>
+      <td id="T_02f65_row1_col9" class="data row1 col9" >0.653395</td>
+    </tr>
+    <tr>
+      <th id="T_02f65_level0_row2" class="row_heading level0 row2" >Tottenham</th>
+      <td id="T_02f65_row2_col0" class="data row2 col0" >1.112660</td>
+      <td id="T_02f65_row2_col1" class="data row2 col1" >1.071904</td>
+      <td id="T_02f65_row2_col2" class="data row2 col2" >1.189458</td>
+      <td id="T_02f65_row2_col3" class="data row2 col3" >1.307029</td>
+      <td id="T_02f65_row2_col4" class="data row2 col4" >1.446063</td>
+      <td id="T_02f65_row2_col5" class="data row2 col5" >1.328469</td>
+      <td id="T_02f65_row2_col6" class="data row2 col6" >1.197598</td>
+      <td id="T_02f65_row2_col7" class="data row2 col7" >1.035633</td>
+      <td id="T_02f65_row2_col8" class="data row2 col8" >0.998982</td>
+      <td id="T_02f65_row2_col9" class="data row2 col9" >0.811046</td>
+    </tr>
+    <tr>
+      <th id="T_02f65_level0_row3" class="row_heading level0 row3" >Arsenal</th>
+      <td id="T_02f65_row3_col0" class="data row3 col0" >0.932155</td>
+      <td id="T_02f65_row3_col1" class="data row3 col1" >1.006654</td>
+      <td id="T_02f65_row3_col2" class="data row3 col2" >1.104138</td>
+      <td id="T_02f65_row3_col3" class="data row3 col3" >1.133643</td>
+      <td id="T_02f65_row3_col4" class="data row3 col4" >1.266962</td>
+      <td id="T_02f65_row3_col5" class="data row3 col5" >1.396181</td>
+      <td id="T_02f65_row3_col6" class="data row3 col6" >1.458181</td>
+      <td id="T_02f65_row3_col7" class="data row3 col7" >1.480671</td>
+      <td id="T_02f65_row3_col8" class="data row3 col8" >1.165685</td>
+      <td id="T_02f65_row3_col9" class="data row3 col9" >0.916626</td>
+    </tr>
+    <tr>
+      <th id="T_02f65_level0_row4" class="row_heading level0 row4" >Liverpool</th>
+      <td id="T_02f65_row4_col0" class="data row4 col0" >0.920991</td>
+      <td id="T_02f65_row4_col1" class="data row4 col1" >1.021822</td>
+      <td id="T_02f65_row4_col2" class="data row4 col2" >1.115659</td>
+      <td id="T_02f65_row4_col3" class="data row4 col3" >1.150030</td>
+      <td id="T_02f65_row4_col4" class="data row4 col4" >1.222138</td>
+      <td id="T_02f65_row4_col5" class="data row4 col5" >1.281755</td>
+      <td id="T_02f65_row4_col6" class="data row4 col6" >1.104969</td>
+      <td id="T_02f65_row4_col7" class="data row4 col7" >1.008530</td>
+      <td id="T_02f65_row4_col8" class="data row4 col8" >0.875578</td>
+      <td id="T_02f65_row4_col9" class="data row4 col9" >0.920009</td>
+    </tr>
+    <tr>
+      <th id="T_02f65_level0_row5" class="row_heading level0 row5" >Aston Villa</th>
+      <td id="T_02f65_row5_col0" class="data row5 col0" >1.233549</td>
+      <td id="T_02f65_row5_col1" class="data row5 col1" >1.312395</td>
+      <td id="T_02f65_row5_col2" class="data row5 col2" >1.348836</td>
+      <td id="T_02f65_row5_col3" class="data row5 col3" >1.327188</td>
+      <td id="T_02f65_row5_col4" class="data row5 col4" >1.251851</td>
+      <td id="T_02f65_row5_col5" class="data row5 col5" >1.174890</td>
+      <td id="T_02f65_row5_col6" class="data row5 col6" >1.304628</td>
+      <td id="T_02f65_row5_col7" class="data row5 col7" >1.319304</td>
+      <td id="T_02f65_row5_col8" class="data row5 col8" >1.161028</td>
+      <td id="T_02f65_row5_col9" class="data row5 col9" >1.034865</td>
+    </tr>
+    <tr>
+      <th id="T_02f65_level0_row6" class="row_heading level0 row6" >Brighton</th>
+      <td id="T_02f65_row6_col0" class="data row6 col0" >0.941249</td>
+      <td id="T_02f65_row6_col1" class="data row6 col1" >0.870486</td>
+      <td id="T_02f65_row6_col2" class="data row6 col2" >0.848643</td>
+      <td id="T_02f65_row6_col3" class="data row6 col3" >0.865711</td>
+      <td id="T_02f65_row6_col4" class="data row6 col4" >0.921085</td>
+      <td id="T_02f65_row6_col5" class="data row6 col5" >0.944988</td>
+      <td id="T_02f65_row6_col6" class="data row6 col6" >1.007016</td>
+      <td id="T_02f65_row6_col7" class="data row6 col7" >1.050843</td>
+      <td id="T_02f65_row6_col8" class="data row6 col8" >1.103437</td>
+      <td id="T_02f65_row6_col9" class="data row6 col9" >1.040319</td>
+    </tr>
+    <tr>
+      <th id="T_02f65_level0_row7" class="row_heading level0 row7" >Crystal Palace</th>
+      <td id="T_02f65_row7_col0" class="data row7 col0" >1.519647</td>
+      <td id="T_02f65_row7_col1" class="data row7 col1" >1.538908</td>
+      <td id="T_02f65_row7_col2" class="data row7 col2" >1.871068</td>
+      <td id="T_02f65_row7_col3" class="data row7 col3" >1.644158</td>
+      <td id="T_02f65_row7_col4" class="data row7 col4" >1.347492</td>
+      <td id="T_02f65_row7_col5" class="data row7 col5" >1.080457</td>
+      <td id="T_02f65_row7_col6" class="data row7 col6" >0.989030</td>
+      <td id="T_02f65_row7_col7" class="data row7 col7" >0.903913</td>
+      <td id="T_02f65_row7_col8" class="data row7 col8" >1.001058</td>
+      <td id="T_02f65_row7_col9" class="data row7 col9" >1.082245</td>
+    </tr>
+    <tr>
+      <th id="T_02f65_level0_row8" class="row_heading level0 row8" >West Ham</th>
+      <td id="T_02f65_row8_col0" class="data row8 col0" >0.956817</td>
+      <td id="T_02f65_row8_col1" class="data row8 col1" >0.924790</td>
+      <td id="T_02f65_row8_col2" class="data row8 col2" >1.246819</td>
+      <td id="T_02f65_row8_col3" class="data row8 col3" >1.410259</td>
+      <td id="T_02f65_row8_col4" class="data row8 col4" >1.539276</td>
+      <td id="T_02f65_row8_col5" class="data row8 col5" >1.333225</td>
+      <td id="T_02f65_row8_col6" class="data row8 col6" >1.191623</td>
+      <td id="T_02f65_row8_col7" class="data row8 col7" >0.988558</td>
+      <td id="T_02f65_row8_col8" class="data row8 col8" >1.016007</td>
+      <td id="T_02f65_row8_col9" class="data row8 col9" >1.182185</td>
+    </tr>
+    <tr>
+      <th id="T_02f65_level0_row9" class="row_heading level0 row9" >Wolves</th>
+      <td id="T_02f65_row9_col0" class="data row9 col0" >0.870529</td>
+      <td id="T_02f65_row9_col1" class="data row9 col1" >0.927888</td>
+      <td id="T_02f65_row9_col2" class="data row9 col2" >0.959890</td>
+      <td id="T_02f65_row9_col3" class="data row9 col3" >1.228514</td>
+      <td id="T_02f65_row9_col4" class="data row9 col4" >1.130476</td>
+      <td id="T_02f65_row9_col5" class="data row9 col5" >1.127123</td>
+      <td id="T_02f65_row9_col6" class="data row9 col6" >1.019043</td>
+      <td id="T_02f65_row9_col7" class="data row9 col7" >0.995745</td>
+      <td id="T_02f65_row9_col8" class="data row9 col8" >1.251343</td>
+      <td id="T_02f65_row9_col9" class="data row9 col9" >1.243312</td>
+    </tr>
+    <tr>
+      <th id="T_02f65_level0_row10" class="row_heading level0 row10" >Southampton</th>
+      <td id="T_02f65_row10_col0" class="data row10 col0" >1.070170</td>
+      <td id="T_02f65_row10_col1" class="data row10 col1" >1.200285</td>
+      <td id="T_02f65_row10_col2" class="data row10 col2" >1.254508</td>
+      <td id="T_02f65_row10_col3" class="data row10 col3" >1.382969</td>
+      <td id="T_02f65_row10_col4" class="data row10 col4" >1.476116</td>
+      <td id="T_02f65_row10_col5" class="data row10 col5" >1.309796</td>
+      <td id="T_02f65_row10_col6" class="data row10 col6" >1.384185</td>
+      <td id="T_02f65_row10_col7" class="data row10 col7" >1.288245</td>
+      <td id="T_02f65_row10_col8" class="data row10 col8" >1.259971</td>
+      <td id="T_02f65_row10_col9" class="data row10 col9" >1.257065</td>
+    </tr>
+    <tr>
+      <th id="T_02f65_level0_row11" class="row_heading level0 row11" >Burnley</th>
+      <td id="T_02f65_row11_col0" class="data row11 col0" >1.275011</td>
+      <td id="T_02f65_row11_col1" class="data row11 col1" >1.427850</td>
+      <td id="T_02f65_row11_col2" class="data row11 col2" >1.498252</td>
+      <td id="T_02f65_row11_col3" class="data row11 col3" >1.657378</td>
+      <td id="T_02f65_row11_col4" class="data row11 col4" >1.651419</td>
+      <td id="T_02f65_row11_col5" class="data row11 col5" >1.566557</td>
+      <td id="T_02f65_row11_col6" class="data row11 col6" >1.456458</td>
+      <td id="T_02f65_row11_col7" class="data row11 col7" >1.442867</td>
+      <td id="T_02f65_row11_col8" class="data row11 col8" >1.409441</td>
+      <td id="T_02f65_row11_col9" class="data row11 col9" >1.384217</td>
+    </tr>
+    <tr>
+      <th id="T_02f65_level0_row12" class="row_heading level0 row12" >Manchester Utd</th>
+      <td id="T_02f65_row12_col0" class="data row12 col0" >1.079266</td>
+      <td id="T_02f65_row12_col1" class="data row12 col1" >0.970293</td>
+      <td id="T_02f65_row12_col2" class="data row12 col2" >0.853211</td>
+      <td id="T_02f65_row12_col3" class="data row12 col3" >0.817358</td>
+      <td id="T_02f65_row12_col4" class="data row12 col4" >0.857697</td>
+      <td id="T_02f65_row12_col5" class="data row12 col5" >0.924775</td>
+      <td id="T_02f65_row12_col6" class="data row12 col6" >1.249623</td>
+      <td id="T_02f65_row12_col7" class="data row12 col7" >1.389740</td>
+      <td id="T_02f65_row12_col8" class="data row12 col8" >1.441132</td>
+      <td id="T_02f65_row12_col9" class="data row12 col9" >1.397254</td>
+    </tr>
+    <tr>
+      <th id="T_02f65_level0_row13" class="row_heading level0 row13" >Newcastle Utd</th>
+      <td id="T_02f65_row13_col0" class="data row13 col0" >1.319353</td>
+      <td id="T_02f65_row13_col1" class="data row13 col1" >1.356947</td>
+      <td id="T_02f65_row13_col2" class="data row13 col2" >1.234398</td>
+      <td id="T_02f65_row13_col3" class="data row13 col3" >1.300836</td>
+      <td id="T_02f65_row13_col4" class="data row13 col4" >1.321206</td>
+      <td id="T_02f65_row13_col5" class="data row13 col5" >1.461462</td>
+      <td id="T_02f65_row13_col6" class="data row13 col6" >1.530809</td>
+      <td id="T_02f65_row13_col7" class="data row13 col7" >1.541368</td>
+      <td id="T_02f65_row13_col8" class="data row13 col8" >1.377176</td>
+      <td id="T_02f65_row13_col9" class="data row13 col9" >1.400313</td>
+    </tr>
+    <tr>
+      <th id="T_02f65_level0_row14" class="row_heading level0 row14" >Everton</th>
+      <td id="T_02f65_row14_col0" class="data row14 col0" >1.218691</td>
+      <td id="T_02f65_row14_col1" class="data row14 col1" >1.340893</td>
+      <td id="T_02f65_row14_col2" class="data row14 col2" >1.370140</td>
+      <td id="T_02f65_row14_col3" class="data row14 col3" >1.297045</td>
+      <td id="T_02f65_row14_col4" class="data row14 col4" >1.214926</td>
+      <td id="T_02f65_row14_col5" class="data row14 col5" >1.236593</td>
+      <td id="T_02f65_row14_col6" class="data row14 col6" >1.282132</td>
+      <td id="T_02f65_row14_col7" class="data row14 col7" >1.394648</td>
+      <td id="T_02f65_row14_col8" class="data row14 col8" >1.327997</td>
+      <td id="T_02f65_row14_col9" class="data row14 col9" >1.411591</td>
+    </tr>
+    <tr>
+      <th id="T_02f65_level0_row15" class="row_heading level0 row15" >Leicester City</th>
+      <td id="T_02f65_row15_col0" class="data row15 col0" >1.095477</td>
+      <td id="T_02f65_row15_col1" class="data row15 col1" >1.129301</td>
+      <td id="T_02f65_row15_col2" class="data row15 col2" >1.235780</td>
+      <td id="T_02f65_row15_col3" class="data row15 col3" >1.197240</td>
+      <td id="T_02f65_row15_col4" class="data row15 col4" >1.253449</td>
+      <td id="T_02f65_row15_col5" class="data row15 col5" >1.376577</td>
+      <td id="T_02f65_row15_col6" class="data row15 col6" >1.381364</td>
+      <td id="T_02f65_row15_col7" class="data row15 col7" >1.366503</td>
+      <td id="T_02f65_row15_col8" class="data row15 col8" >1.391003</td>
+      <td id="T_02f65_row15_col9" class="data row15 col9" >1.495964</td>
+    </tr>
+    <tr>
+      <th id="T_02f65_level0_row16" class="row_heading level0 row16" >Leeds United</th>
+      <td id="T_02f65_row16_col0" class="data row16 col0" >1.603559</td>
+      <td id="T_02f65_row16_col1" class="data row16 col1" >1.275820</td>
+      <td id="T_02f65_row16_col2" class="data row16 col2" >1.266708</td>
+      <td id="T_02f65_row16_col3" class="data row16 col3" >1.304930</td>
+      <td id="T_02f65_row16_col4" class="data row16 col4" >1.445592</td>
+      <td id="T_02f65_row16_col5" class="data row16 col5" >1.613767</td>
+      <td id="T_02f65_row16_col6" class="data row16 col6" >1.599067</td>
+      <td id="T_02f65_row16_col7" class="data row16 col7" >1.571124</td>
+      <td id="T_02f65_row16_col8" class="data row16 col8" >1.477162</td>
+      <td id="T_02f65_row16_col9" class="data row16 col9" >1.615155</td>
+    </tr>
+  </tbody>
+</table>
+
+            </div>
+            <div id="plot3_npxGΔ" class="mb-3">
+                <style type="text/css">
+#T_c33d5_row0_col0, #T_c33d5_row0_col1, #T_c33d5_row0_col2, #T_c33d5_row0_col3, #T_c33d5_row0_col4, #T_c33d5_row0_col5, #T_c33d5_row0_col6, #T_c33d5_row0_col7, #T_c33d5_row0_col8, #T_c33d5_row0_col9, #T_c33d5_row3_col4 {
+  background-color: #053061;
+  color: #f1f1f1;
+}
+#T_c33d5_row1_col0 {
+  background-color: #c5dfec;
+  color: #000000;
+}
+#T_c33d5_row1_col1 {
+  background-color: #9dcbe1;
+  color: #000000;
+}
+#T_c33d5_row1_col2 {
+  background-color: #96c7df;
+  color: #000000;
+}
+#T_c33d5_row1_col3 {
+  background-color: #529dc8;
+  color: #f1f1f1;
+}
+#T_c33d5_row1_col4 {
+  background-color: #87beda;
+  color: #000000;
+}
+#T_c33d5_row1_col5 {
+  background-color: #65a9cf;
+  color: #f1f1f1;
+}
+#T_c33d5_row1_col6 {
+  background-color: #10457e;
+  color: #f1f1f1;
+}
+#T_c33d5_row1_col7 {
+  background-color: #114781;
+  color: #f1f1f1;
+}
+#T_c33d5_row1_col8 {
+  background-color: #08366a;
+  color: #f1f1f1;
+}
+#T_c33d5_row1_col9, #T_c33d5_row3_col3 {
+  background-color: #09386d;
+  color: #f1f1f1;
+}
+#T_c33d5_row2_col0, #T_c33d5_row4_col8 {
+  background-color: #f9c2a7;
+  color: #000000;
+}
+#T_c33d5_row2_col1 {
+  background-color: #eff3f5;
+  color: #000000;
+}
+#T_c33d5_row2_col2, #T_c33d5_row4_col0, #T_c33d5_row9_col1 {
+  background-color: #deebf2;
+  color: #000000;
+}
+#T_c33d5_row2_col3 {
+  background-color: #eaf1f5;
+  color: #000000;
+}
+#T_c33d5_row2_col4 {
+  background-color: #eb9172;
+  color: #f1f1f1;
+}
+#T_c33d5_row2_col5 {
+  background-color: #d35a4a;
+  color: #f1f1f1;
+}
+#T_c33d5_row2_col6, #T_c33d5_row9_col6 {
+  background-color: #f2a17f;
+  color: #000000;
+}
+#T_c33d5_row2_col7 {
+  background-color: #f19e7d;
+  color: #000000;
+}
+#T_c33d5_row2_col8, #T_c33d5_row5_col9, #T_c33d5_row12_col2 {
+  background-color: #fae7dc;
+  color: #000000;
+}
+#T_c33d5_row2_col9 {
+  background-color: #4f9bc7;
+  color: #f1f1f1;
+}
+#T_c33d5_row3_col0, #T_c33d5_row4_col3 {
+  background-color: #dae9f2;
+  color: #000000;
+}
+#T_c33d5_row3_col1 {
+  background-color: #a5cee3;
+  color: #000000;
+}
+#T_c33d5_row3_col2 {
+  background-color: #4997c5;
+  color: #f1f1f1;
+}
+#T_c33d5_row3_col5 {
+  background-color: #2e77b5;
+  color: #f1f1f1;
+}
+#T_c33d5_row3_col6 {
+  background-color: #3480b9;
+  color: #f1f1f1;
+}
+#T_c33d5_row3_col7 {
+  background-color: #78b4d5;
+  color: #000000;
+}
+#T_c33d5_row3_col8, #T_c33d5_row6_col2 {
+  background-color: #a2cde3;
+  color: #000000;
+}
+#T_c33d5_row3_col9 {
+  background-color: #68abd0;
+  color: #f1f1f1;
+}
+#T_c33d5_row4_col1, #T_c33d5_row6_col3 {
+  background-color: #c2ddec;
+  color: #000000;
+}
+#T_c33d5_row4_col2, #T_c33d5_row9_col2 {
+  background-color: #d2e6f0;
+  color: #000000;
+}
+#T_c33d5_row4_col4, #T_c33d5_row9_col4, #T_c33d5_row11_col3 {
+  background-color: #f5a886;
+  color: #000000;
+}
+#T_c33d5_row4_col5, #T_c33d5_row15_col0 {
+  background-color: #dc6e57;
+  color: #f1f1f1;
+}
+#T_c33d5_row4_col6, #T_c33d5_row5_col5, #T_c33d5_row8_col4 {
+  background-color: #d05548;
+  color: #f1f1f1;
+}
+#T_c33d5_row4_col7 {
+  background-color: #cc4c44;
+  color: #f1f1f1;
+}
+#T_c33d5_row4_col9, #T_c33d5_row9_col3, #T_c33d5_row10_col4 {
+  background-color: #d4e6f1;
+  color: #000000;
+}
+#T_c33d5_row5_col0, #T_c33d5_row5_col1, #T_c33d5_row5_col2, #T_c33d5_row5_col3, #T_c33d5_row5_col4, #T_c33d5_row14_col5, #T_c33d5_row16_col6, #T_c33d5_row16_col7, #T_c33d5_row16_col8, #T_c33d5_row16_col9 {
+  background-color: #67001f;
+  color: #f1f1f1;
+}
+#T_c33d5_row5_col6, #T_c33d5_row12_col1 {
+  background-color: #e98b6e;
+  color: #f1f1f1;
+}
+#T_c33d5_row5_col7 {
+  background-color: #fce0d0;
+  color: #000000;
+}
+#T_c33d5_row5_col8, #T_c33d5_row8_col3, #T_c33d5_row14_col2 {
+  background-color: #fcd5bf;
+  color: #000000;
+}
+#T_c33d5_row6_col0, #T_c33d5_row8_col0, #T_c33d5_row10_col0, #T_c33d5_row10_col1 {
+  background-color: #edf2f5;
+  color: #000000;
+}
+#T_c33d5_row6_col1 {
+  background-color: #bbdaea;
+  color: #000000;
+}
+#T_c33d5_row6_col4, #T_c33d5_row16_col3 {
+  background-color: #fddbc7;
+  color: #000000;
+}
+#T_c33d5_row6_col5, #T_c33d5_row11_col7 {
+  background-color: #e8896c;
+  color: #f1f1f1;
+}
+#T_c33d5_row6_col6, #T_c33d5_row8_col5, #T_c33d5_row10_col8 {
+  background-color: #db6b55;
+  color: #f1f1f1;
+}
+#T_c33d5_row6_col7, #T_c33d5_row12_col6 {
+  background-color: #d55d4c;
+  color: #f1f1f1;
+}
+#T_c33d5_row6_col8 {
+  background-color: #de735c;
+  color: #f1f1f1;
+}
+#T_c33d5_row6_col9 {
+  background-color: #fbceb7;
+  color: #000000;
+}
+#T_c33d5_row7_col0, #T_c33d5_row8_col7 {
+  background-color: #f9ede5;
+  color: #000000;
+}
+#T_c33d5_row7_col1, #T_c33d5_row9_col7 {
+  background-color: #f8bb9e;
+  color: #000000;
+}
+#T_c33d5_row7_col2, #T_c33d5_row7_col9, #T_c33d5_row8_col9, #T_c33d5_row9_col9 {
+  background-color: #f9c4a9;
+  color: #000000;
+}
+#T_c33d5_row7_col3 {
+  background-color: #f5aa89;
+  color: #000000;
+}
+#T_c33d5_row7_col4 {
+  background-color: #bd2d35;
+  color: #f1f1f1;
+}
+#T_c33d5_row7_col5 {
+  background-color: #be3036;
+  color: #f1f1f1;
+}
+#T_c33d5_row7_col6, #T_c33d5_row13_col8 {
+  background-color: #b82531;
+  color: #f1f1f1;
+}
+#T_c33d5_row7_col7, #T_c33d5_row11_col4 {
+  background-color: #b61f2e;
+  color: #f1f1f1;
+}
+#T_c33d5_row7_col8, #T_c33d5_row11_col8, #T_c33d5_row14_col1, #T_c33d5_row14_col3 {
+  background-color: #e37e64;
+  color: #f1f1f1;
+}
+#T_c33d5_row8_col1 {
+  background-color: #b6d7e8;
+  color: #000000;
+}
+#T_c33d5_row8_col2, #T_c33d5_row15_col2 {
+  background-color: #e6eff4;
+  color: #000000;
+}
+#T_c33d5_row8_col6 {
+  background-color: #fdd9c4;
+  color: #000000;
+}
+#T_c33d5_row8_col8 {
+  background-color: #fcdecd;
+  color: #000000;
+}
+#T_c33d5_row9_col0 {
+  background-color: #fae8de;
+  color: #000000;
+}
+#T_c33d5_row9_col5 {
+  background-color: #c6413e;
+  color: #f1f1f1;
+}
+#T_c33d5_row9_col8, #T_c33d5_row13_col0 {
+  background-color: #fcd3bc;
+  color: #000000;
+}
+#T_c33d5_row10_col2 {
+  background-color: #90c4dd;
+  color: #000000;
+}
+#T_c33d5_row10_col3 {
+  background-color: #98c8e0;
+  color: #000000;
+}
+#T_c33d5_row10_col5 {
+  background-color: #fbe6da;
+  color: #000000;
+}
+#T_c33d5_row10_col6, #T_c33d5_row16_col4 {
+  background-color: #ea8e70;
+  color: #f1f1f1;
+}
+#T_c33d5_row10_col7 {
+  background-color: #e48066;
+  color: #f1f1f1;
+}
+#T_c33d5_row10_col9 {
+  background-color: #f4a683;
+  color: #000000;
+}
+#T_c33d5_row11_col0 {
+  background-color: #f6af8e;
+  color: #000000;
+}
+#T_c33d5_row11_col1 {
+  background-color: #f7b799;
+  color: #000000;
+}
+#T_c33d5_row11_col2 {
+  background-color: #fbe4d6;
+  color: #000000;
+}
+#T_c33d5_row11_col5 {
+  background-color: #c94741;
+  color: #f1f1f1;
+}
+#T_c33d5_row11_col6 {
+  background-color: #d7634f;
+  color: #f1f1f1;
+}
+#T_c33d5_row11_col9, #T_c33d5_row16_col1 {
+  background-color: #dd7059;
+  color: #f1f1f1;
+}
+#T_c33d5_row12_col0 {
+  background-color: #df765e;
+  color: #f1f1f1;
+}
+#T_c33d5_row12_col3 {
+  background-color: #fcdfcf;
+  color: #000000;
+}
+#T_c33d5_row12_col4 {
+  background-color: #f8bda1;
+  color: #000000;
+}
+#T_c33d5_row12_col5 {
+  background-color: #da6853;
+  color: #f1f1f1;
+}
+#T_c33d5_row12_col7 {
+  background-color: #d25849;
+  color: #f1f1f1;
+}
+#T_c33d5_row12_col8 {
+  background-color: #c84440;
+  color: #f1f1f1;
+}
+#T_c33d5_row12_col9 {
+  background-color: #c43b3c;
+  color: #f1f1f1;
+}
+#T_c33d5_row13_col1 {
+  background-color: #f9efe9;
+  color: #000000;
+}
+#T_c33d5_row13_col2 {
+  background-color: #e3edf3;
+  color: #000000;
+}
+#T_c33d5_row13_col3 {
+  background-color: #fac8af;
+  color: #000000;
+}
+#T_c33d5_row13_col4 {
+  background-color: #e27b62;
+  color: #f1f1f1;
+}
+#T_c33d5_row13_col5 {
+  background-color: #cb4942;
+  color: #f1f1f1;
+}
+#T_c33d5_row13_col6 {
+  background-color: #f3a481;
+  color: #000000;
+}
+#T_c33d5_row13_col7 {
+  background-color: #f7b99c;
+  color: #000000;
+}
+#T_c33d5_row13_col9, #T_c33d5_row14_col8 {
+  background-color: #b72230;
+  color: #f1f1f1;
+}
+#T_c33d5_row14_col0 {
+  background-color: #d86551;
+  color: #f1f1f1;
+}
+#T_c33d5_row14_col4 {
+  background-color: #700320;
+  color: #f1f1f1;
+}
+#T_c33d5_row14_col6 {
+  background-color: #840924;
+  color: #f1f1f1;
+}
+#T_c33d5_row14_col7 {
+  background-color: #c53e3d;
+  color: #f1f1f1;
+}
+#T_c33d5_row14_col9 {
+  background-color: #b1182b;
+  color: #f1f1f1;
+}
+#T_c33d5_row15_col1 {
+  background-color: #fddcc9;
+  color: #000000;
+}
+#T_c33d5_row15_col3 {
+  background-color: #f2f5f6;
+  color: #000000;
+}
+#T_c33d5_row15_col4 {
+  background-color: #e58368;
+  color: #f1f1f1;
+}
+#T_c33d5_row15_col5, #T_c33d5_row15_col7, #T_c33d5_row15_col8 {
+  background-color: #ab162a;
+  color: #f1f1f1;
+}
+#T_c33d5_row15_col6 {
+  background-color: #a81529;
+  color: #f1f1f1;
+}
+#T_c33d5_row15_col9 {
+  background-color: #900d26;
+  color: #f1f1f1;
+}
+#T_c33d5_row16_col0 {
+  background-color: #bf3338;
+  color: #f1f1f1;
+}
+#T_c33d5_row16_col2 {
+  background-color: #f8f1ed;
+  color: #000000;
+}
+#T_c33d5_row16_col5 {
+  background-color: #960f27;
+  color: #f1f1f1;
+}
+</style>
+<table id="T_c33d5" style='width:100%'>
+  <caption>npxG conceded (rolling 12 games avg*) in EPL over the last calendar year</caption>
+  <thead>
+    <tr>
+      <th class="index_name level0" >month</th>
+      <th id="T_c33d5_level0_col0" class="col_heading level0 col0" >2021-02</th>
+      <th id="T_c33d5_level0_col1" class="col_heading level0 col1" >2021-03</th>
+      <th id="T_c33d5_level0_col2" class="col_heading level0 col2" >2021-04</th>
+      <th id="T_c33d5_level0_col3" class="col_heading level0 col3" >2021-05</th>
+      <th id="T_c33d5_level0_col4" class="col_heading level0 col4" >2021-08</th>
+      <th id="T_c33d5_level0_col5" class="col_heading level0 col5" >2021-09</th>
+      <th id="T_c33d5_level0_col6" class="col_heading level0 col6" >2021-10</th>
+      <th id="T_c33d5_level0_col7" class="col_heading level0 col7" >2021-11</th>
+      <th id="T_c33d5_level0_col8" class="col_heading level0 col8" >2021-12</th>
+      <th id="T_c33d5_level0_col9" class="col_heading level0 col9" >2022-01</th>
+    </tr>
+    <tr>
+      <th class="index_name level0" >team</th>
+      <th class="blank col0" >&nbsp;</th>
+      <th class="blank col1" >&nbsp;</th>
+      <th class="blank col2" >&nbsp;</th>
+      <th class="blank col3" >&nbsp;</th>
+      <th class="blank col4" >&nbsp;</th>
+      <th class="blank col5" >&nbsp;</th>
+      <th class="blank col6" >&nbsp;</th>
+      <th class="blank col7" >&nbsp;</th>
+      <th class="blank col8" >&nbsp;</th>
+      <th class="blank col9" >&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_c33d5_level0_row0" class="row_heading level0 row0" >Manchester City</th>
+      <td id="T_c33d5_row0_col0" class="data row0 col0" >1.484835</td>
+      <td id="T_c33d5_row0_col1" class="data row0 col1" >1.279327</td>
+      <td id="T_c33d5_row0_col2" class="data row0 col2" >1.319888</td>
+      <td id="T_c33d5_row0_col3" class="data row0 col3" >1.123085</td>
+      <td id="T_c33d5_row0_col4" class="data row0 col4" >1.181243</td>
+      <td id="T_c33d5_row0_col5" class="data row0 col5" >1.332956</td>
+      <td id="T_c33d5_row0_col6" class="data row0 col6" >1.299850</td>
+      <td id="T_c33d5_row0_col7" class="data row0 col7" >1.510983</td>
+      <td id="T_c33d5_row0_col8" class="data row0 col8" >1.455745</td>
+      <td id="T_c33d5_row0_col9" class="data row0 col9" >1.187585</td>
+    </tr>
+    <tr>
+      <th id="T_c33d5_level0_row1" class="row_heading level0 row1" >Liverpool</th>
+      <td id="T_c33d5_row1_col0" class="data row1 col0" >0.576392</td>
+      <td id="T_c33d5_row1_col1" class="data row1 col1" >0.541375</td>
+      <td id="T_c33d5_row1_col2" class="data row1 col2" >0.495391</td>
+      <td id="T_c33d5_row1_col3" class="data row1 col3" >0.669599</td>
+      <td id="T_c33d5_row1_col4" class="data row1 col4" >0.697020</td>
+      <td id="T_c33d5_row1_col5" class="data row1 col5" >0.900228</td>
+      <td id="T_c33d5_row1_col6" class="data row1 col6" >1.222637</td>
+      <td id="T_c33d5_row1_col7" class="data row1 col7" >1.413382</td>
+      <td id="T_c33d5_row1_col8" class="data row1 col8" >1.429584</td>
+      <td id="T_c33d5_row1_col9" class="data row1 col9" >1.157082</td>
+    </tr>
+    <tr>
+      <th id="T_c33d5_level0_row2" class="row_heading level0 row2" >Tottenham</th>
+      <td id="T_c33d5_row2_col0" class="data row2 col0" >-0.054516</td>
+      <td id="T_c33d5_row2_col1" class="data row2 col1" >0.174260</td>
+      <td id="T_c33d5_row2_col2" class="data row2 col2" >0.150292</td>
+      <td id="T_c33d5_row2_col3" class="data row2 col3" >0.170282</td>
+      <td id="T_c33d5_row2_col4" class="data row2 col4" >-0.046220</td>
+      <td id="T_c33d5_row2_col5" class="data row2 col5" >-0.088914</td>
+      <td id="T_c33d5_row2_col6" class="data row2 col6" >-0.009339</td>
+      <td id="T_c33d5_row2_col7" class="data row2 col7" >-0.072949</td>
+      <td id="T_c33d5_row2_col8" class="data row2 col8" >0.267701</td>
+      <td id="T_c33d5_row2_col9" class="data row2 col9" >0.776994</td>
+    </tr>
+    <tr>
+      <th id="T_c33d5_level0_row3" class="row_heading level0 row3" >Chelsea</th>
+      <td id="T_c33d5_row3_col0" class="data row3 col0" >0.480407</td>
+      <td id="T_c33d5_row3_col1" class="data row3 col1" >0.517450</td>
+      <td id="T_c33d5_row3_col2" class="data row3 col2" >0.756776</td>
+      <td id="T_c33d5_row3_col3" class="data row3 col3" >1.083814</td>
+      <td id="T_c33d5_row3_col4" class="data row3 col4" >1.175252</td>
+      <td id="T_c33d5_row3_col5" class="data row3 col5" >1.090494</td>
+      <td id="T_c33d5_row3_col6" class="data row3 col6" >1.002475</td>
+      <td id="T_c33d5_row3_col7" class="data row3 col7" >0.913050</td>
+      <td id="T_c33d5_row3_col8" class="data row3 col8" >0.755383</td>
+      <td id="T_c33d5_row3_col9" class="data row3 col9" >0.713460</td>
+    </tr>
+    <tr>
+      <th id="T_c33d5_level0_row4" class="row_heading level0 row4" >Arsenal</th>
+      <td id="T_c33d5_row4_col0" class="data row4 col0" >0.448344</td>
+      <td id="T_c33d5_row4_col1" class="data row4 col1" >0.411605</td>
+      <td id="T_c33d5_row4_col2" class="data row4 col2" >0.236925</td>
+      <td id="T_c33d5_row4_col3" class="data row4 col3" >0.252351</td>
+      <td id="T_c33d5_row4_col4" class="data row4 col4" >0.013603</td>
+      <td id="T_c33d5_row4_col5" class="data row4 col5" >-0.043912</td>
+      <td id="T_c33d5_row4_col6" class="data row4 col6" >-0.211710</td>
+      <td id="T_c33d5_row4_col7" class="data row4 col7" >-0.326583</td>
+      <td id="T_c33d5_row4_col8" class="data row4 col8" >0.069999</td>
+      <td id="T_c33d5_row4_col9" class="data row4 col9" >0.413967</td>
+    </tr>
+    <tr>
+      <th id="T_c33d5_level0_row5" class="row_heading level0 row5" >Crystal Palace</th>
+      <td id="T_c33d5_row5_col0" class="data row5 col0" >-0.891621</td>
+      <td id="T_c33d5_row5_col1" class="data row5 col1" >-1.026141</td>
+      <td id="T_c33d5_row5_col2" class="data row5 col2" >-1.370635</td>
+      <td id="T_c33d5_row5_col3" class="data row5 col3" >-0.924220</td>
+      <td id="T_c33d5_row5_col4" class="data row5 col4" >-0.504226</td>
+      <td id="T_c33d5_row5_col5" class="data row5 col5" >-0.107396</td>
+      <td id="T_c33d5_row5_col6" class="data row5 col6" >-0.068027</td>
+      <td id="T_c33d5_row5_col7" class="data row5 col7" >0.220607</td>
+      <td id="T_c33d5_row5_col8" class="data row5 col8" >0.143614</td>
+      <td id="T_c33d5_row5_col9" class="data row5 col9" >0.130865</td>
+    </tr>
+    <tr>
+      <th id="T_c33d5_level0_row6" class="row_heading level0 row6" >Brighton</th>
+      <td id="T_c33d5_row6_col0" class="data row6 col0" >0.361123</td>
+      <td id="T_c33d5_row6_col1" class="data row6 col1" >0.433555</td>
+      <td id="T_c33d5_row6_col2" class="data row6 col2" >0.437165</td>
+      <td id="T_c33d5_row6_col3" class="data row6 col3" >0.347544</td>
+      <td id="T_c33d5_row6_col4" class="data row6 col4" >0.168884</td>
+      <td id="T_c33d5_row6_col5" class="data row6 col5" >0.028488</td>
+      <td id="T_c33d5_row6_col6" class="data row6 col6" >-0.153908</td>
+      <td id="T_c33d5_row6_col7" class="data row6 col7" >-0.276550</td>
+      <td id="T_c33d5_row6_col8" class="data row6 col8" >-0.195453</td>
+      <td id="T_c33d5_row6_col9" class="data row6 col9" >-0.001389</td>
+    </tr>
+    <tr>
+      <th id="T_c33d5_level0_row7" class="row_heading level0 row7" >Aston Villa</th>
+      <td id="T_c33d5_row7_col0" class="data row7 col0" >0.209531</td>
+      <td id="T_c33d5_row7_col1" class="data row7 col1" >-0.238125</td>
+      <td id="T_c33d5_row7_col2" class="data row7 col2" >-0.410760</td>
+      <td id="T_c33d5_row7_col3" class="data row7 col3" >-0.287132</td>
+      <td id="T_c33d5_row7_col4" class="data row7 col4" >-0.285503</td>
+      <td id="T_c33d5_row7_col5" class="data row7 col5" >-0.192918</td>
+      <td id="T_c33d5_row7_col6" class="data row7 col6" >-0.339995</td>
+      <td id="T_c33d5_row7_col7" class="data row7 col7" >-0.470360</td>
+      <td id="T_c33d5_row7_col8" class="data row7 col8" >-0.163255</td>
+      <td id="T_c33d5_row7_col9" class="data row7 col9" >-0.031451</td>
+    </tr>
+    <tr>
+      <th id="T_c33d5_level0_row8" class="row_heading level0 row8" >West Ham</th>
+      <td id="T_c33d5_row8_col0" class="data row8 col0" >0.358054</td>
+      <td id="T_c33d5_row8_col1" class="data row8 col1" >0.453514</td>
+      <td id="T_c33d5_row8_col2" class="data row8 col2" >0.090495</td>
+      <td id="T_c33d5_row8_col3" class="data row8 col3" >-0.126951</td>
+      <td id="T_c33d5_row8_col4" class="data row8 col4" >-0.189143</td>
+      <td id="T_c33d5_row8_col5" class="data row8 col5" >-0.048278</td>
+      <td id="T_c33d5_row8_col6" class="data row8 col6" >0.174620</td>
+      <td id="T_c33d5_row8_col7" class="data row8 col7" >0.313569</td>
+      <td id="T_c33d5_row8_col8" class="data row8 col8" >0.195565</td>
+      <td id="T_c33d5_row8_col9" class="data row8 col9" >-0.032488</td>
+    </tr>
+    <tr>
+      <th id="T_c33d5_level0_row9" class="row_heading level0 row9" >Leicester City</th>
+      <td id="T_c33d5_row9_col0" class="data row9 col0" >0.171182</td>
+      <td id="T_c33d5_row9_col1" class="data row9 col1" >0.275779</td>
+      <td id="T_c33d5_row9_col2" class="data row9 col2" >0.232352</td>
+      <td id="T_c33d5_row9_col3" class="data row9 col3" >0.287660</td>
+      <td id="T_c33d5_row9_col4" class="data row9 col4" >0.013369</td>
+      <td id="T_c33d5_row9_col5" class="data row9 col5" >-0.154431</td>
+      <td id="T_c33d5_row9_col6" class="data row9 col6" >-0.008581</td>
+      <td id="T_c33d5_row9_col7" class="data row9 col7" >0.045829</td>
+      <td id="T_c33d5_row9_col8" class="data row9 col8" >0.141008</td>
+      <td id="T_c33d5_row9_col9" class="data row9 col9" >-0.037860</td>
+    </tr>
+    <tr>
+      <th id="T_c33d5_level0_row10" class="row_heading level0 row10" >Manchester Utd</th>
+      <td id="T_c33d5_row10_col0" class="data row10 col0" >0.361065</td>
+      <td id="T_c33d5_row10_col1" class="data row10 col1" >0.184166</td>
+      <td id="T_c33d5_row10_col2" class="data row10 col2" >0.517927</td>
+      <td id="T_c33d5_row10_col3" class="data row10 col3" >0.485635</td>
+      <td id="T_c33d5_row10_col4" class="data row10 col4" >0.496075</td>
+      <td id="T_c33d5_row10_col5" class="data row10 col5" >0.344716</td>
+      <td id="T_c33d5_row10_col6" class="data row10 col6" >-0.062852</td>
+      <td id="T_c33d5_row10_col7" class="data row10 col7" >-0.161091</td>
+      <td id="T_c33d5_row10_col8" class="data row10 col8" >-0.222355</td>
+      <td id="T_c33d5_row10_col9" class="data row10 col9" >-0.141374</td>
+    </tr>
+    <tr>
+      <th id="T_c33d5_level0_row11" class="row_heading level0 row11" >Southampton</th>
+      <td id="T_c33d5_row11_col0" class="data row11 col0" >-0.134420</td>
+      <td id="T_c33d5_row11_col1" class="data row11 col1" >-0.252913</td>
+      <td id="T_c33d5_row11_col2" class="data row11 col2" >-0.210559</td>
+      <td id="T_c33d5_row11_col3" class="data row11 col3" >-0.295778</td>
+      <td id="T_c33d5_row11_col4" class="data row11 col4" >-0.315812</td>
+      <td id="T_c33d5_row11_col5" class="data row11 col5" >-0.140240</td>
+      <td id="T_c33d5_row11_col6" class="data row11 col6" >-0.179851</td>
+      <td id="T_c33d5_row11_col7" class="data row11 col7" >-0.137887</td>
+      <td id="T_c33d5_row11_col8" class="data row11 col8" >-0.165471</td>
+      <td id="T_c33d5_row11_col9" class="data row11 col9" >-0.286633</td>
+    </tr>
+    <tr>
+      <th id="T_c33d5_level0_row12" class="row_heading level0 row12" >Everton</th>
+      <td id="T_c33d5_row12_col0" class="data row12 col0" >-0.340105</td>
+      <td id="T_c33d5_row12_col1" class="data row12 col1" >-0.422178</td>
+      <td id="T_c33d5_row12_col2" class="data row12 col2" >-0.176289</td>
+      <td id="T_c33d5_row12_col3" class="data row12 col3" >-0.070391</td>
+      <td id="T_c33d5_row12_col4" class="data row12 col4" >0.076487</td>
+      <td id="T_c33d5_row12_col5" class="data row12 col5" >-0.058548</td>
+      <td id="T_c33d5_row12_col6" class="data row12 col6" >-0.192907</td>
+      <td id="T_c33d5_row12_col7" class="data row12 col7" >-0.298788</td>
+      <td id="T_c33d5_row12_col8" class="data row12 col8" >-0.338911</td>
+      <td id="T_c33d5_row12_col9" class="data row12 col9" >-0.425295</td>
+    </tr>
+    <tr>
+      <th id="T_c33d5_level0_row13" class="row_heading level0 row13" >Wolves</th>
+      <td id="T_c33d5_row13_col0" class="data row13 col0" >0.024524</td>
+      <td id="T_c33d5_row13_col1" class="data row13 col1" >0.059807</td>
+      <td id="T_c33d5_row13_col2" class="data row13 col2" >0.115252</td>
+      <td id="T_c33d5_row13_col3" class="data row13 col3" >-0.174767</td>
+      <td id="T_c33d5_row13_col4" class="data row13 col4" >-0.097073</td>
+      <td id="T_c33d5_row13_col5" class="data row13 col5" >-0.136692</td>
+      <td id="T_c33d5_row13_col6" class="data row13 col6" >-0.003372</td>
+      <td id="T_c33d5_row13_col7" class="data row13 col7" >0.036739</td>
+      <td id="T_c33d5_row13_col8" class="data row13 col8" >-0.428340</td>
+      <td id="T_c33d5_row13_col9" class="data row13 col9" >-0.499059</td>
+    </tr>
+    <tr>
+      <th id="T_c33d5_level0_row14" class="row_heading level0 row14" >Burnley</th>
+      <td id="T_c33d5_row14_col0" class="data row14 col0" >-0.392024</td>
+      <td id="T_c33d5_row14_col1" class="data row14 col1" >-0.462738</td>
+      <td id="T_c33d5_row14_col2" class="data row14 col2" >-0.328365</td>
+      <td id="T_c33d5_row14_col3" class="data row14 col3" >-0.424260</td>
+      <td id="T_c33d5_row14_col4" class="data row14 col4" >-0.480909</td>
+      <td id="T_c33d5_row14_col5" class="data row14 col5" >-0.433563</td>
+      <td id="T_c33d5_row14_col6" class="data row14 col6" >-0.482076</td>
+      <td id="T_c33d5_row14_col7" class="data row14 col7" >-0.377155</td>
+      <td id="T_c33d5_row14_col8" class="data row14 col8" >-0.441503</td>
+      <td id="T_c33d5_row14_col9" class="data row14 col9" >-0.522844</td>
+    </tr>
+    <tr>
+      <th id="T_c33d5_level0_row15" class="row_heading level0 row15" >Leeds United</th>
+      <td id="T_c33d5_row15_col0" class="data row15 col0" >-0.370087</td>
+      <td id="T_c33d5_row15_col1" class="data row15 col1" >-0.095364</td>
+      <td id="T_c33d5_row15_col2" class="data row15 col2" >0.100395</td>
+      <td id="T_c33d5_row15_col3" class="data row15 col3" >0.123533</td>
+      <td id="T_c33d5_row15_col4" class="data row15 col4" >-0.079731</td>
+      <td id="T_c33d5_row15_col5" class="data row15 col5" >-0.274069</td>
+      <td id="T_c33d5_row15_col6" class="data row15 col6" >-0.395794</td>
+      <td id="T_c33d5_row15_col7" class="data row15 col7" >-0.513845</td>
+      <td id="T_c33d5_row15_col8" class="data row15 col8" >-0.490159</td>
+      <td id="T_c33d5_row15_col9" class="data row15 col9" >-0.610413</td>
+    </tr>
+    <tr>
+      <th id="T_c33d5_level0_row16" class="row_heading level0 row16" >Newcastle Utd</th>
+      <td id="T_c33d5_row16_col0" class="data row16 col0" >-0.562930</td>
+      <td id="T_c33d5_row16_col1" class="data row16 col1" >-0.510241</td>
+      <td id="T_c33d5_row16_col2" class="data row16 col2" >-0.085289</td>
+      <td id="T_c33d5_row16_col3" class="data row16 col3" >-0.103881</td>
+      <td id="T_c33d5_row16_col4" class="data row16 col4" >-0.050954</td>
+      <td id="T_c33d5_row16_col5" class="data row16 col5" >-0.321553</td>
+      <td id="T_c33d5_row16_col6" class="data row16 col6" >-0.559757</td>
+      <td id="T_c33d5_row16_col7" class="data row16 col7" >-0.717971</td>
+      <td id="T_c33d5_row16_col8" class="data row16 col8" >-0.685973</td>
+      <td id="T_c33d5_row16_col9" class="data row16 col9" >-0.715140</td>
+    </tr>
+  </tbody>
+</table>
+
+            </div>
+        </div>
+    </div>
+    
+
+</body>
+
+</html>
